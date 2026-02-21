@@ -1,227 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jadwalkan Sesi — Nemenin</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="Atur jadwal sesi curhat atau pendampingan aktivitasmu dengan counselor pilihan di Nemenin."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://riskiputraalamzah.github.io/nemenin/schedule.html"
+    />
+    <meta property="og:title" content="Jadwalkan Sesi — Nemenin" />
+    <meta
+      property="og:description"
+      content="Atur jadwal sesi curhat atau pendampingan aktivitasmu dengan counselor pilihan di Nemenin."
+    />
+    <meta
+      property="og:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://riskiputraalamzah.github.io/nemenin/schedule.html"
+    />
+    <meta property="twitter:title" content="Jadwalkan Sesi — Nemenin" />
+    <meta
+      property="twitter:description"
+      content="Atur jadwal sesi curhat atau pendampingan aktivitasmu dengan counselor pilihan di Nemenin."
+    />
+    <meta
+      property="twitter:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
-                    colors: {
-                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
-                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
-                        navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { jakarta: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: {
+              teal: { DEFAULT: "#E07A5F", light: "#F2A68B", dark: "#C1574A" },
+              peach: { DEFAULT: "#F2CC8F", light: "#F7DBA7", dark: "#D4A55A" },
+              navy: {
+                DEFAULT: "#0F172A",
+                light: "#1E293B",
+                card: "#1E293B",
+                border: "#334155",
+              },
+            },
+          },
+        },
+      };
     </script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/lenis@1/dist/lenis.css" />
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body class="font-jakarta bg-[#0F172A] text-slate-100 min-h-screen">
-
+  <body class="font-jakarta bg-[#0F172A] text-slate-100 min-h-screen">
     <!-- Top Bar -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-navy/80 border-b border-navy-border px-4 sm:px-6 lg:px-8 py-4">
-        <div class="max-w-4xl mx-auto flex items-center justify-between">
-            <a href="dashboard.html"
-                class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm no-underline">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                Kembali ke Dashboard
-            </a>
-            <a href="index.html" class="flex items-center gap-2 font-bold text-white no-underline">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center">
-                    <i data-lucide="heart-handshake" class="w-4 h-4 text-white"></i>
-                </div>
-            </a>
-        </div>
+    <header
+      class="sticky top-0 z-50 backdrop-blur-xl bg-navy/80 border-b border-navy-border px-4 sm:px-6 lg:px-8 py-4"
+    >
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <a
+          href="dashboard.html"
+          class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm no-underline"
+        >
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          Kembali ke Dashboard
+        </a>
+        <a
+          href="index.html"
+          class="flex items-center gap-2 font-bold text-white no-underline"
+        >
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center"
+          >
+            <i data-lucide="heart-handshake" class="w-4 h-4 text-white"></i>
+          </div>
+        </a>
+      </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 class="text-2xl font-bold mb-2">Jadwalkan Sesi</h1>
-        <p class="text-slate-400 text-sm mb-8">Pilih jenis sesi, waktu, dan lengkapi detail lainnya.</p>
+      <h1 class="text-2xl font-bold mb-2">Jadwalkan Sesi</h1>
+      <p class="text-slate-400 text-sm mb-8">
+        Pilih jenis sesi, waktu, dan lengkapi detail lainnya.
+      </p>
 
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-2 space-y-6">
-
-                <!-- Step 1: Companion -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
-                        <span
-                            class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold">1</span>
-                        Counselor Pilihan
-                    </h3>
-                    <div class="flex items-center gap-4 p-4 rounded-xl bg-navy/50 border border-navy-border">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white text-xl font-bold shrink-0">
-                            S</div>
-                        <div class="flex-1 min-w-0">
-                            <div class="flex items-center gap-2">
-                                <h4 class="font-bold">Sari Dewi</h4>
-                                <i data-lucide="badge-check" class="w-4 h-4 text-teal-light"></i>
-                            </div>
-                            <p class="text-xs text-slate-400 mt-0.5">Psikologi lulusan UI · ⭐ 4.92 (96 sesi)</p>
-                        </div>
-                        <a href="dashboard.html" class="text-xs text-teal-light hover:underline shrink-0">Ganti</a>
-                    </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Step 1: Companion -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <span
+                class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold"
+                >1</span
+              >
+              Counselor Pilihan
+            </h3>
+            <div
+              class="flex items-center gap-4 p-4 rounded-xl bg-navy/50 border border-navy-border"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white text-xl font-bold shrink-0"
+              >
+                S
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2">
+                  <h4 class="font-bold">Sari Dewi</h4>
+                  <i
+                    data-lucide="badge-check"
+                    class="w-4 h-4 text-teal-light"
+                  ></i>
                 </div>
-
-                <!-- Step 2: Type -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
-                        <span
-                            class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold">2</span>
-                        Jenis Sesi
-                    </h3>
-                    <div class="grid sm:grid-cols-2 gap-4">
-                        <label class="cursor-pointer">
-                            <input type="radio" name="session-type" value="online" checked class="hidden peer" />
-                            <div
-                                class="p-4 rounded-xl border-2 border-navy-border peer-checked:border-teal peer-checked:bg-teal/5 transition-all">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center"><i
-                                            data-lucide="video" class="w-5 h-5 text-teal-light"></i></div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">Online</h4>
-                                        <p class="text-xs text-slate-400">Video call / chat</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                        <label class="cursor-pointer">
-                            <input type="radio" name="session-type" value="offline" class="hidden peer" />
-                            <div
-                                class="p-4 rounded-xl border-2 border-navy-border peer-checked:border-peach peer-checked:bg-peach/5 transition-all">
-                                <div class="flex items-center gap-3 mb-2">
-                                    <div class="w-10 h-10 rounded-lg bg-peach/10 flex items-center justify-center"><i
-                                            data-lucide="map-pin" class="w-5 h-5 text-peach"></i></div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">Offline</h4>
-                                        <p class="text-xs text-slate-400">Bertemu langsung</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Step 3: Date/Time/Duration -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
-                        <span
-                            class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold">3</span>
-                        Tanggal & Waktu
-                    </h3>
-                    <div class="grid sm:grid-cols-2 gap-4 mb-4">
-                        <div><label class="form-label">Tanggal</label><input type="date" class="form-input" /></div>
-                        <div><label class="form-label">Waktu Mulai</label><input type="time" class="form-input" /></div>
-                    </div>
-                    <label class="form-label">Durasi</label>
-                    <div class="flex flex-wrap gap-3">
-                        <label class="cursor-pointer"><input type="radio" name="dur" value="30" class="hidden peer" />
-                            <div
-                                class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all">
-                                30 menit</div>
-                        </label>
-                        <label class="cursor-pointer"><input type="radio" name="dur" value="60" checked
-                                class="hidden peer" />
-                            <div
-                                class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all">
-                                60 menit</div>
-                        </label>
-                        <label class="cursor-pointer"><input type="radio" name="dur" value="90" class="hidden peer" />
-                            <div
-                                class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all">
-                                90 menit</div>
-                        </label>
-                        <label class="cursor-pointer"><input type="radio" name="dur" value="120" class="hidden peer" />
-                            <div
-                                class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all">
-                                120 menit</div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Step 4: Location -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
-                        <span
-                            class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold">4</span>
-                        Lokasi <span class="text-xs text-slate-500 font-normal">(untuk sesi offline)</span>
-                    </h3>
-                    <div class="relative">
-                        <i data-lucide="map-pin"
-                            class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" placeholder="Contoh: Starbucks Sudirman, Jakarta" class="form-input pl-10" />
-                    </div>
-                    <p class="text-xs text-slate-500 mt-2 flex items-center gap-1"><i data-lucide="info"
-                            class="w-3 h-3"></i>Pilih tempat publik yang aman dan nyaman</p>
-                </div>
-
-                <!-- Step 5: Notes -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
-                        <span
-                            class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold">5</span>
-                        Catatan <span class="text-xs text-slate-500 font-normal">(opsional)</span>
-                    </h3>
-                    <textarea rows="3" class="form-input"
-                        placeholder="Ceritakan hal apa yang ingin kamu bicarakan..."></textarea>
-                </div>
+                <p class="text-xs text-slate-400 mt-0.5">
+                  Psikologi lulusan UI · ⭐ 4.92 (96 sesi)
+                </p>
+              </div>
+              <a
+                href="dashboard.html"
+                class="text-xs text-teal-light hover:underline shrink-0"
+                >Ganti</a
+              >
             </div>
+          </div>
 
-            <!-- Right Sidebar: Summary -->
-            <div class="lg:col-span-1">
-                <div class="glass-card p-6 sticky top-24">
-                    <h3 class="font-bold mb-4 flex items-center gap-2 text-sm"><i data-lucide="receipt"
-                            class="w-4 h-4 text-teal-light"></i>Ringkasan</h3>
-                    <div class="space-y-3 mb-6">
-                        <div class="flex justify-between text-sm"><span class="text-slate-400">Counselor</span><span
-                                class="font-medium">Sari Dewi</span></div>
-                        <div class="flex justify-between text-sm"><span class="text-slate-400">Jenis</span><span
-                                class="font-medium">Online</span></div>
-                        <div class="flex justify-between text-sm"><span class="text-slate-400">Durasi</span><span
-                                class="font-medium">60 menit</span></div>
-                        <div class="flex justify-between text-sm"><span class="text-slate-400">Tarif</span><span
-                                class="font-medium">Rp 75.000/jam</span></div>
-                        <div class="border-t border-navy-border pt-3 flex justify-between">
-                            <span class="font-semibold">Total</span>
-                            <span class="text-lg font-bold text-gradient">Rp 75.000</span>
-                        </div>
+          <!-- Step 2: Type -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <span
+                class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold"
+                >2</span
+              >
+              Jenis Sesi
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="session-type"
+                  value="online"
+                  checked
+                  class="hidden peer"
+                />
+                <div
+                  class="p-4 rounded-xl border-2 border-navy-border peer-checked:border-teal peer-checked:bg-teal/5 transition-all"
+                >
+                  <div class="flex items-center gap-3 mb-2">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center"
+                    >
+                      <i
+                        data-lucide="video"
+                        class="w-5 h-5 text-teal-light"
+                      ></i>
                     </div>
-                    <button onclick="confirmSchedule()" class="btn-primary w-full justify-center mb-3"><i
-                            data-lucide="calendar-check" class="w-4 h-4"></i>Konfirmasi & Jadwalkan</button>
-                    <a href="dashboard.html" class="btn-secondary w-full justify-center text-sm">Batal</a>
-                    <div class="mt-4 p-3 rounded-xl bg-teal/5 border border-teal/20">
-                        <p class="text-xs text-slate-400 flex items-start gap-2"><i data-lucide="shield-check"
-                                class="w-4 h-4 text-teal-light shrink-0 mt-0.5"></i>Sesi dilindungi oleh standar
-                            keamanan Nemenin.</p>
+                    <div>
+                      <h4 class="font-semibold text-sm">Online</h4>
+                      <p class="text-xs text-slate-400">Video call / chat</p>
                     </div>
+                  </div>
                 </div>
+              </label>
+              <label class="cursor-pointer">
+                <input
+                  type="radio"
+                  name="session-type"
+                  value="offline"
+                  class="hidden peer"
+                />
+                <div
+                  class="p-4 rounded-xl border-2 border-navy-border peer-checked:border-peach peer-checked:bg-peach/5 transition-all"
+                >
+                  <div class="flex items-center gap-3 mb-2">
+                    <div
+                      class="w-10 h-10 rounded-lg bg-peach/10 flex items-center justify-center"
+                    >
+                      <i data-lucide="map-pin" class="w-5 h-5 text-peach"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-semibold text-sm">Offline</h4>
+                      <p class="text-xs text-slate-400">Bertemu langsung</p>
+                    </div>
+                  </div>
+                </div>
+              </label>
             </div>
+          </div>
+
+          <!-- Step 3: Date/Time/Duration -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <span
+                class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold"
+                >3</span
+              >
+              Tanggal & Waktu
+            </h3>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="form-label">Tanggal</label
+                ><input type="date" class="form-input" />
+              </div>
+              <div>
+                <label class="form-label">Waktu Mulai</label
+                ><input type="time" class="form-input" />
+              </div>
+            </div>
+            <label class="form-label">Durasi</label>
+            <div class="flex flex-wrap gap-3">
+              <label class="cursor-pointer"
+                ><input
+                  type="radio"
+                  name="dur"
+                  value="30"
+                  class="hidden peer"
+                />
+                <div
+                  class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all"
+                >
+                  30 menit
+                </div>
+              </label>
+              <label class="cursor-pointer"
+                ><input
+                  type="radio"
+                  name="dur"
+                  value="60"
+                  checked
+                  class="hidden peer"
+                />
+                <div
+                  class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all"
+                >
+                  60 menit
+                </div>
+              </label>
+              <label class="cursor-pointer"
+                ><input
+                  type="radio"
+                  name="dur"
+                  value="90"
+                  class="hidden peer"
+                />
+                <div
+                  class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all"
+                >
+                  90 menit
+                </div>
+              </label>
+              <label class="cursor-pointer"
+                ><input
+                  type="radio"
+                  name="dur"
+                  value="120"
+                  class="hidden peer"
+                />
+                <div
+                  class="px-4 py-2 rounded-lg border border-navy-border peer-checked:border-teal peer-checked:bg-teal/10 peer-checked:text-teal-light text-sm font-medium transition-all"
+                >
+                  120 menit
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 4: Location -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <span
+                class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold"
+                >4</span
+              >
+              Lokasi
+              <span class="text-xs text-slate-500 font-normal"
+                >(untuk sesi offline)</span
+              >
+            </h3>
+            <div class="relative">
+              <i
+                data-lucide="map-pin"
+                class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"
+              ></i>
+              <input
+                type="text"
+                placeholder="Contoh: Starbucks Sudirman, Jakarta"
+                class="form-input pl-10"
+              />
+            </div>
+            <p class="text-xs text-slate-500 mt-2 flex items-center gap-1">
+              <i data-lucide="info" class="w-3 h-3"></i>Pilih tempat publik yang
+              aman dan nyaman
+            </p>
+          </div>
+
+          <!-- Step 5: Notes -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <span
+                class="w-6 h-6 rounded-full bg-teal text-white text-xs flex items-center justify-center font-bold"
+                >5</span
+              >
+              Catatan
+              <span class="text-xs text-slate-500 font-normal">(opsional)</span>
+            </h3>
+            <textarea
+              rows="3"
+              class="form-input"
+              placeholder="Ceritakan hal apa yang ingin kamu bicarakan..."
+            ></textarea>
+          </div>
         </div>
+
+        <!-- Right Sidebar: Summary -->
+        <div class="lg:col-span-1">
+          <div class="glass-card p-6 sticky top-24">
+            <h3 class="font-bold mb-4 flex items-center gap-2 text-sm">
+              <i data-lucide="receipt" class="w-4 h-4 text-teal-light"></i
+              >Ringkasan
+            </h3>
+            <div class="space-y-3 mb-6">
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Counselor</span
+                ><span class="font-medium">Sari Dewi</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Jenis</span
+                ><span class="font-medium">Online</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Durasi</span
+                ><span class="font-medium">60 menit</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-slate-400">Tarif</span
+                ><span class="font-medium">Rp 75.000/jam</span>
+              </div>
+              <div
+                class="border-t border-navy-border pt-3 flex justify-between"
+              >
+                <span class="font-semibold">Total</span>
+                <span class="text-lg font-bold text-gradient">Rp 75.000</span>
+              </div>
+            </div>
+            <button
+              onclick="confirmSchedule()"
+              class="btn-primary w-full justify-center mb-3"
+            >
+              <i data-lucide="calendar-check" class="w-4 h-4"></i>Konfirmasi &
+              Jadwalkan
+            </button>
+            <a
+              href="dashboard.html"
+              class="btn-secondary w-full justify-center text-sm"
+              >Batal</a
+            >
+            <div class="mt-4 p-3 rounded-xl bg-teal/5 border border-teal/20">
+              <p class="text-xs text-slate-400 flex items-start gap-2">
+                <i
+                  data-lucide="shield-check"
+                  class="w-4 h-4 text-teal-light shrink-0 mt-0.5"
+                ></i
+                >Sesi dilindungi oleh standar keamanan Nemenin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
     <script>
-        lucide.createIcons();
-        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      lucide.createIcons();
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
         requestAnimationFrame(raf);
-        function confirmSchedule() {
-            const t = document.createElement('div');
-            t.innerHTML = '✅ Sesi berhasil dijadwalkan!';
-            t.style.cssText = `position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,#E07A5F,#F2A68B);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;`;
-            document.body.appendChild(t);
-            setTimeout(() => window.location.href = 'dashboard.html', 2000);
-        }
+      }
+      requestAnimationFrame(raf);
+      function confirmSchedule() {
+        const t = document.createElement("div");
+        t.innerHTML = "✅ Sesi berhasil dijadwalkan!";
+        t.style.cssText = `position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,#E07A5F,#F2A68B);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;`;
+        document.body.appendChild(t);
+        setTimeout(() => (window.location.href = "dashboard.html"), 2000);
+      }
     </script>
-</body>
-
+  </body>
 </html>

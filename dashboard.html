@@ -1,28 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard — Nemenin</title>
-    <meta name="description"
-        content="Dashboard pengguna Nemenin. Kelola sesi, temukan counselor, dan atur profil kamu." />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="Dashboard pengguna Nemenin. Kelola sesi, temukan counselor, dan atur profil kamu."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://riskiputraalamzah.github.io/nemenin/dashboard.html"
+    />
+    <meta property="og:title" content="Dashboard — Nemenin" />
+    <meta
+      property="og:description"
+      content="Dashboard pengguna Nemenin. Kelola sesi, temukan counselor, dan atur profil kamu."
+    />
+    <meta
+      property="og:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://riskiputraalamzah.github.io/nemenin/dashboard.html"
+    />
+    <meta property="twitter:title" content="Dashboard — Nemenin" />
+    <meta
+      property="twitter:description"
+      content="Dashboard pengguna Nemenin. Kelola sesi, temukan counselor, dan atur profil kamu."
+    />
+    <meta
+      property="twitter:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
-                    colors: {
-                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
-                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
-                        navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { jakarta: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: {
+              teal: { DEFAULT: "#E07A5F", light: "#F2A68B", dark: "#C1574A" },
+              peach: { DEFAULT: "#F2CC8F", light: "#F7DBA7", dark: "#D4A55A" },
+              navy: {
+                DEFAULT: "#0F172A",
+                light: "#1E293B",
+                card: "#1E293B",
+                border: "#334155",
+              },
+            },
+          },
+        },
+      };
     </script>
 
     <!-- Lucide Icons -->
@@ -33,10 +72,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body class="font-jakarta bg-[#0F172A] text-slate-100">
-
+  <body class="font-jakarta bg-[#0F172A] text-slate-100">
     <!-- Sidebar Overlay (mobile) -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
@@ -44,830 +82,1143 @@
        SIDEBAR
        ============================================================ -->
     <aside id="sidebar" class="sidebar flex flex-col">
-        <!-- Logo -->
-        <div class="p-6 pb-4">
-            <a href="index.html" class="flex items-center gap-2 text-lg font-bold text-white no-underline">
-                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center">
-                    <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
-                </div>
-                <span>Nemenin</span>
-            </a>
+      <!-- Logo -->
+      <div class="p-6 pb-4">
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-lg font-bold text-white no-underline"
+        >
+          <div
+            class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center"
+          >
+            <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
+          </div>
+          <span>Nemenin</span>
+        </a>
+      </div>
+
+      <!-- User Info -->
+      <div class="px-5 pb-4">
+        <div
+          class="flex items-center gap-3 p-3 rounded-xl bg-navy/50 border border-navy-border"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-teal to-peach flex items-center justify-center text-white font-bold text-sm"
+          >
+            A
+          </div>
+          <div class="min-w-0">
+            <p class="text-sm font-semibold truncate">Arya Pratama</p>
+            <p class="text-xs text-slate-400 flex items-center gap-1">
+              <span
+                class="w-2 h-2 rounded-full bg-emerald-400 inline-block"
+              ></span>
+              Akun Reguler
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!-- User Info -->
-        <div class="px-5 pb-4">
-            <div class="flex items-center gap-3 p-3 rounded-xl bg-navy/50 border border-navy-border">
-                <div
-                    class="w-10 h-10 rounded-full bg-gradient-to-br from-teal to-peach flex items-center justify-center text-white font-bold text-sm">
-                    A
-                </div>
-                <div class="min-w-0">
-                    <p class="text-sm font-semibold truncate">Arya Pratama</p>
-                    <p class="text-xs text-slate-400 flex items-center gap-1">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
-                        Akun Reguler
-                    </p>
-                </div>
-            </div>
-        </div>
+      <!-- Navigation Links -->
+      <nav class="flex-1 py-2">
+        <p
+          class="px-6 text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider"
+        >
+          Menu
+        </p>
+        <a href="#" class="sidebar-link active" data-tab="beranda">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          Beranda
+        </a>
+        <a href="#" class="sidebar-link" data-tab="discovery">
+          <i data-lucide="search" class="w-5 h-5"></i>
+          Cari Counselor
+        </a>
+        <a href="#" class="sidebar-link" data-tab="sessions">
+          <i data-lucide="calendar-check" class="w-5 h-5"></i>
+          Sesi Saya
+        </a>
+        <a href="#" class="sidebar-link" data-tab="upgrade">
+          <i data-lucide="crown" class="w-5 h-5"></i>
+          Upgrade Premium
+        </a>
 
-        <!-- Navigation Links -->
-        <nav class="flex-1 py-2">
-            <p class="px-6 text-xs text-slate-500 font-semibold mb-2 uppercase tracking-wider">Menu</p>
-            <a href="#" class="sidebar-link active" data-tab="beranda">
-                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
-                Beranda
-            </a>
-            <a href="#" class="sidebar-link" data-tab="discovery">
-                <i data-lucide="search" class="w-5 h-5"></i>
-                Cari Counselor
-            </a>
-            <a href="#" class="sidebar-link" data-tab="sessions">
-                <i data-lucide="calendar-check" class="w-5 h-5"></i>
-                Sesi Saya
-            </a>
-            <a href="#" class="sidebar-link" data-tab="upgrade">
-                <i data-lucide="crown" class="w-5 h-5"></i>
-                Upgrade Premium
-            </a>
+        <p
+          class="px-6 text-xs text-slate-500 font-semibold mt-6 mb-2 uppercase tracking-wider"
+        >
+          Akun
+        </p>
+        <a href="#" class="sidebar-link" data-tab="settings">
+          <i data-lucide="settings" class="w-5 h-5"></i>
+          Pengaturan
+        </a>
+      </nav>
 
-            <p class="px-6 text-xs text-slate-500 font-semibold mt-6 mb-2 uppercase tracking-wider">Akun</p>
-            <a href="#" class="sidebar-link" data-tab="settings">
-                <i data-lucide="settings" class="w-5 h-5"></i>
-                Pengaturan
-            </a>
-        </nav>
-
-        <!-- Logout -->
-        <div class="p-4">
-            <a href="login.html" id="logout-btn"
-                class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-500/10">
-                <i data-lucide="log-out" class="w-5 h-5"></i>
-                Keluar
-            </a>
-        </div>
+      <!-- Logout -->
+      <div class="p-4">
+        <a
+          href="login.html"
+          id="logout-btn"
+          class="sidebar-link text-red-400 hover:text-red-300 hover:bg-red-500/10"
+        >
+          <i data-lucide="log-out" class="w-5 h-5"></i>
+          Keluar
+        </a>
+      </div>
     </aside>
 
     <!-- ============================================================
        MAIN CONTENT
        ============================================================ -->
     <main class="dashboard-main min-h-screen">
-        <!-- Top Bar -->
-        <header
-            class="sticky top-0 z-50 backdrop-blur-xl bg-navy/80 border-b border-navy-border px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <button id="dash-menu-btn" class="mobile-menu-btn p-2 rounded-lg hover:bg-navy-light text-slate-400">
-                    <i data-lucide="menu" class="w-5 h-5"></i>
-                </button>
-                <h1 id="page-title" class="text-lg font-bold">Beranda</h1>
-            </div>
-            <div class="flex items-center gap-3">
-                <button class="relative p-2 rounded-lg hover:bg-navy-light text-slate-400 transition-colors">
-                    <i data-lucide="bell" class="w-5 h-5"></i>
-                    <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-peach rounded-full"></span>
-                </button>
-                <div
-                    class="w-8 h-8 rounded-full bg-gradient-to-br from-teal to-peach flex items-center justify-center text-white font-bold text-xs">
-                    A
-                </div>
-            </div>
-        </header>
-
-        <!-- Content Area -->
-        <div class="p-4 sm:p-6 lg:p-8">
-
-            <!-- ======== PANEL: BERANDA ======== -->
-            <div id="panel-beranda" class="tab-panel">
-                <!-- Welcome -->
-                <div class="glass-card p-6 sm:p-8 mb-8 relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-teal/10 to-transparent rounded-bl-full pointer-events-none">
-                    </div>
-                    <div class="relative z-10">
-                        <h2 class="text-2xl font-bold mb-2">Selamat datang, <span class="text-gradient">Arya!</span> 👋
-                        </h2>
-                        <p class="text-slate-400 max-w-lg">
-                            Kamu tidak sendirian. Temukan teman cerita yang siap mendengarkan kamu hari ini.
-                        </p>
-                        <a href="#" class="btn-primary mt-4 inline-flex text-sm"
-                            onclick="document.querySelector('[data-tab=discovery]').click(); return false;">
-                            <i data-lucide="search" class="w-4 h-4"></i>
-                            Cari Counselor
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Stats Cards -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                    <div class="dash-stat-card">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-slate-400">Counselor Online</span>
-                            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                                <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i>
-                            </div>
-                        </div>
-                        <p class="text-2xl font-bold">24</p>
-                        <p class="text-xs text-emerald-400 mt-1">+3 dari kemarin</p>
-                    </div>
-                    <div class="dash-stat-card">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-slate-400">Total Sesi</span>
-                            <div class="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center">
-                                <i data-lucide="calendar" class="w-4 h-4 text-teal-light"></i>
-                            </div>
-                        </div>
-                        <p class="text-2xl font-bold">5</p>
-                        <p class="text-xs text-slate-400 mt-1">Bulan ini</p>
-                    </div>
-                    <div class="dash-stat-card">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-slate-400">Jam Ditemani</span>
-                            <div class="w-8 h-8 rounded-lg bg-peach/10 flex items-center justify-center">
-                                <i data-lucide="clock" class="w-4 h-4 text-peach"></i>
-                            </div>
-                        </div>
-                        <p class="text-2xl font-bold">8.5</p>
-                        <p class="text-xs text-slate-400 mt-1">Jam total</p>
-                    </div>
-                    <div class="dash-stat-card">
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-slate-400">Status Akun</span>
-                            <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                                <i data-lucide="badge-check" class="w-4 h-4 text-amber-400"></i>
-                            </div>
-                        </div>
-                        <p class="text-lg font-bold text-peach">Reguler</p>
-                        <p class="text-xs text-teal-light mt-1 cursor-pointer hover:underline"
-                            onclick="document.querySelector('[data-tab=upgrade]').click()">Upgrade →</p>
-                    </div>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="glass-card p-6">
-                    <h3 class="font-bold mb-4 flex items-center gap-2">
-                        <i data-lucide="activity" class="w-4 h-4 text-teal-light"></i>
-                        Aktivitas Terbaru
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors">
-                            <div class="w-10 h-10 shrink-0 rounded-full bg-teal/10 flex items-center justify-center">
-                                <i data-lucide="message-circle" class="w-4 h-4 text-teal-light"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-sm font-medium">Sesi online dengan <span class="text-teal-light">Sari
-                                        Dewi</span> selesai</p>
-                                <p class="text-xs text-slate-500">2 jam lalu · 60 menit · Online</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors">
-                            <div class="w-10 h-10 shrink-0 rounded-full bg-peach/10 flex items-center justify-center">
-                                <i data-lucide="calendar-plus" class="w-4 h-4 text-peach"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-sm font-medium">Sesi baru dijadwalkan dengan <span
-                                        class="text-peach">Andi Pratama</span></p>
-                                <p class="text-xs text-slate-500">Kemarin · Offline · Kafe Teman, Jakarta</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors">
-                            <div
-                                class="w-10 h-10 shrink-0 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                                <i data-lucide="user-plus" class="w-4 h-4 text-emerald-400"></i>
-                            </div>
-                            <div class="min-w-0">
-                                <p class="text-sm font-medium">Akun berhasil dibuat</p>
-                                <p class="text-xs text-slate-500">3 hari lalu</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======== PANEL: CARI COUNSELOR ======== -->
-            <div id="panel-discovery" class="tab-panel hidden">
-                <!-- Search Bar -->
-                <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <div class="flex-1 relative">
-                        <i data-lucide="search"
-                            class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
-                        <input type="text" placeholder="Cari berdasarkan nama, keahlian..." class="form-input pl-10" />
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="tab-btn active">Semua</button>
-                        <button class="tab-btn">Online</button>
-                        <button class="tab-btn">Offline</button>
-                    </div>
-                </div>
-
-                <!-- Companion Grid -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Companion 1 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    A
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Andi Pratama</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge online">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                                        Online
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Pendengar yang baik dan berempati. Siap menemani kamu dalam suasana apa pun.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span
-                                    class="text-xs bg-teal/10 text-teal-light px-2 py-0.5 rounded-full">mendengarkan</span>
-                                <span
-                                    class="text-xs bg-teal/10 text-teal-light px-2 py-0.5 rounded-full">motivasi</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 50.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.85 (128)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-primary w-full justify-center text-sm mt-4">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                Mulai Sesi
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Companion 2 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    S
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Sari Dewi</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge online">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                                        Online
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Psikologi lulusan UI. Passionate di bidang kesehatan mental dan empati.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="text-xs bg-peach/10 text-peach px-2 py-0.5 rounded-full">konseling
-                                    ringan</span>
-                                <span class="text-xs bg-peach/10 text-peach px-2 py-0.5 rounded-full">empati</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 75.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.92 (96)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-primary w-full justify-center text-sm mt-4">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                Mulai Sesi
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Companion 3 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    R
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Rizki Amanah</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge offline">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                                        Offline
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Suka ngobrol dan menemani. Tempatku adalah tempat ceritamu.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="text-xs bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded-full">teman
-                                    ngobrol</span>
-                                <span
-                                    class="text-xs bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded-full">curhat</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 45.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.78 (74)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-secondary w-full justify-center text-sm mt-4">
-                                <i data-lucide="calendar" class="w-4 h-4"></i>
-                                Jadwalkan Sesi
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Companion 4 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    M
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Maya Lestari</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge online">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                                        Online
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Aktif di komunitas volunteer. Percaya setiap orang berhak didengar.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span
-                                    class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full">volunteer</span>
-                                <span
-                                    class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full">mendengarkan</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 60.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.65 (52)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-primary w-full justify-center text-sm mt-4">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                Mulai Sesi
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Companion 5 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    B
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Budi Santoso</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge offline">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"></span>
-                                        Offline
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Counselor offline berpengalaman. Siap menemani di kafe atau taman.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded-full">offline</span>
-                                <span
-                                    class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded-full">menemani</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 55.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.70 (43)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-secondary w-full justify-center text-sm mt-4">
-                                <i data-lucide="calendar" class="w-4 h-4"></i>
-                                Jadwalkan Sesi
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Companion 6 -->
-                    <div class="companion-card">
-                        <div class="p-5">
-                            <div class="flex items-start gap-4 mb-4">
-                                <div
-                                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-xl font-bold shrink-0">
-                                    D
-                                </div>
-                                <div class="min-w-0 flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <h4 class="font-bold text-sm truncate">Dina Fitriani</h4>
-                                        <i data-lucide="badge-check" class="w-4 h-4 text-teal-light shrink-0"></i>
-                                    </div>
-                                    <div class="online-badge online">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                                        Online
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                                Lulusan konseling. Menyediakan ruang aman tanpa penghakiman.
-                            </p>
-                            <div class="flex flex-wrap gap-1.5 mb-4">
-                                <span
-                                    class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full">konseling</span>
-                                <span
-                                    class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full">empati</span>
-                                <span class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full">ruang
-                                    aman</span>
-                            </div>
-                            <div class="flex items-center justify-between pt-3 border-t border-navy-border">
-                                <div>
-                                    <p class="text-xs text-slate-500">Mulai dari</p>
-                                    <p class="text-sm font-bold text-peach">Rp 80.000<span
-                                            class="text-xs text-slate-400 font-normal">/jam</span></p>
-                                </div>
-                                <div class="flex items-center gap-1 text-xs text-amber-400">
-                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                    4.95 (187)
-                                </div>
-                            </div>
-                            <a href="schedule.html" class="btn-primary w-full justify-center text-sm mt-4">
-                                <i data-lucide="message-circle" class="w-4 h-4"></i>
-                                Mulai Sesi
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======== PANEL: SESI SAYA ======== -->
-            <div id="panel-sessions" class="tab-panel hidden">
-                <!-- Session Tabs -->
-                <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
-                    <button class="session-tab-btn tab-btn active" data-session="active">Aktif</button>
-                    <button class="session-tab-btn tab-btn" data-session="upcoming">Mendatang</button>
-                    <button class="session-tab-btn tab-btn" data-session="completed">Selesai</button>
-                </div>
-
-                <!-- Active Sessions -->
-                <div id="session-active" class="session-panel space-y-4">
-                    <div class="session-card flex flex-col sm:flex-row sm:items-center gap-4">
-                        <div class="flex items-center gap-4 flex-1 min-w-0">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white font-bold shrink-0">
-                                S
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-sm">Sari Dewi</h4>
-                                    <span class="session-badge active">Aktif</span>
-                                </div>
-                                <p class="text-xs text-slate-400 mt-1">Online · Dimulai 15 menit lalu</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 sm:shrink-0">
-                            <a href="chat.html" class="btn-primary text-xs py-2 px-4">
-                                <i data-lucide="video" class="w-3 h-3"></i>
-                                Lanjutkan
-                            </a>
-                            <button
-                                class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10">
-                                Akhiri
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Upcoming Sessions -->
-                <div id="session-upcoming" class="session-panel space-y-4 hidden">
-                    <div class="session-card flex flex-col sm:flex-row sm:items-center gap-4">
-                        <div class="flex items-center gap-4 flex-1 min-w-0">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center text-white font-bold shrink-0">
-                                A
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-sm">Andi Pratama</h4>
-                                    <span class="session-badge upcoming">Mendatang</span>
-                                </div>
-                                <p class="text-xs text-slate-400 mt-1">Offline · Besok, 14:00 WIB · Kafe Teman, Jakarta
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 sm:shrink-0">
-                            <button class="btn-secondary text-xs py-2 px-4">
-                                <i data-lucide="edit" class="w-3 h-3"></i>
-                                Ubah Jadwal
-                            </button>
-                            <button
-                                class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10">
-                                Batalkan
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="session-card flex flex-col sm:flex-row sm:items-center gap-4">
-                        <div class="flex items-center gap-4 flex-1 min-w-0">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white font-bold shrink-0">
-                                D
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-sm">Dina Fitriani</h4>
-                                    <span class="session-badge upcoming">Mendatang</span>
-                                </div>
-                                <p class="text-xs text-slate-400 mt-1">Online · 24 Feb 2026, 10:00 WIB</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 sm:shrink-0">
-                            <button class="btn-secondary text-xs py-2 px-4">
-                                <i data-lucide="edit" class="w-3 h-3"></i>
-                                Ubah Jadwal
-                            </button>
-                            <button
-                                class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10">
-                                Batalkan
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Completed Sessions -->
-                <div id="session-completed" class="session-panel space-y-4 hidden">
-                    <div class="session-card flex flex-col sm:flex-row sm:items-center gap-4 opacity-75">
-                        <div class="flex items-center gap-4 flex-1 min-w-0">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center text-white font-bold shrink-0">
-                                M
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-sm">Maya Lestari</h4>
-                                    <span class="session-badge completed">Selesai</span>
-                                </div>
-                                <p class="text-xs text-slate-400 mt-1">Online · 18 Feb 2026 · 45 menit · Rp 45.000</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 sm:shrink-0">
-                            <button class="btn-secondary text-xs py-2 px-4">
-                                <i data-lucide="star" class="w-3 h-3"></i>
-                                Beri Rating
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="session-card flex flex-col sm:flex-row sm:items-center gap-4 opacity-75">
-                        <div class="flex items-center gap-4 flex-1 min-w-0">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white font-bold shrink-0">
-                                S
-                            </div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2 flex-wrap">
-                                    <h4 class="font-bold text-sm">Sari Dewi</h4>
-                                    <span class="session-badge completed">Selesai</span>
-                                </div>
-                                <p class="text-xs text-slate-400 mt-1">Online · 15 Feb 2026 · 60 menit · Rp 75.000</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-2 sm:shrink-0">
-                            <div class="flex items-center gap-1 text-xs text-amber-400">
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                                <i data-lucide="star" class="w-3 h-3 fill-current"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======== PANEL: UPGRADE PREMIUM ======== -->
-            <div id="panel-upgrade" class="tab-panel hidden">
-                <div class="max-w-3xl mx-auto">
-                    <!-- Upgrade Hero -->
-                    <div class="glass-card pricing-card featured p-8 sm:p-10 text-center mb-8 relative overflow-hidden">
-                        <div class="pricing-badge">Upgrade</div>
-                        <div
-                            class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center mb-6">
-                            <i data-lucide="crown" class="w-8 h-8 text-white"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold mb-2">Upgrade ke <span class="text-gradient">Premium</span></h2>
-                        <p class="text-slate-400 mb-6 max-w-md mx-auto">
-                            Dapatkan akses penuh ke semua fitur Nemenin dan nikmati pengalaman terbaik.
-                        </p>
-                        <div class="mb-8">
-                            <span class="text-5xl font-extrabold text-gradient">Rp 99.000</span>
-                            <span class="text-slate-400"> / 6 bulan</span>
-                        </div>
-
-                        <!-- Feature Comparison -->
-                        <div class="text-left max-w-lg mx-auto mb-8">
-                            <div class="grid grid-cols-[1fr,auto,auto] gap-x-8 gap-y-3 text-sm">
-                                <div class="font-semibold text-slate-300">Fitur</div>
-                                <div class="font-semibold text-slate-400 text-center">Reguler</div>
-                                <div class="font-semibold text-teal-light text-center">Premium</div>
-
-                                <div class="text-slate-400">Visibilitas Katalog</div>
-                                <div class="text-center text-slate-500">Terbatas</div>
-                                <div class="text-center text-teal-light">Unlimited</div>
-
-                                <div class="text-slate-400">Konsultasi Online</div>
-                                <div class="text-center"><i data-lucide="check"
-                                        class="w-4 h-4 text-teal-light inline"></i></div>
-                                <div class="text-center"><i data-lucide="check"
-                                        class="w-4 h-4 text-teal-light inline"></i></div>
-
-                                <div class="text-slate-400">Konsultasi Offline</div>
-                                <div class="text-center text-slate-500">Berbayar</div>
-                                <div class="text-center text-teal-light font-bold">Gratis</div>
-
-                                <div class="text-slate-400">Masa Aktif</div>
-                                <div class="text-center text-slate-500">1 bulan</div>
-                                <div class="text-center text-teal-light">6 bulan</div>
-
-                                <div class="text-slate-400">Komunikasi WA</div>
-                                <div class="text-center"><i data-lucide="x" class="w-4 h-4 text-red-400 inline"></i>
-                                </div>
-                                <div class="text-center"><i data-lucide="check"
-                                        class="w-4 h-4 text-teal-light inline"></i></div>
-
-                                <div class="text-slate-400">Event & Couple Matching</div>
-                                <div class="text-center"><i data-lucide="x" class="w-4 h-4 text-red-400 inline"></i>
-                                </div>
-                                <div class="text-center"><i data-lucide="check"
-                                        class="w-4 h-4 text-teal-light inline"></i></div>
-                            </div>
-                        </div>
-
-                        <button class="btn-primary text-base px-8">
-                            <i data-lucide="zap" class="w-5 h-5"></i>
-                            Upgrade Sekarang
-                        </button>
-                        <p class="text-xs text-slate-500 mt-3">Pembayaran aman melalui payment gateway terpercaya</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ======== PANEL: PENGATURAN ======== -->
-            <div id="panel-settings" class="tab-panel hidden">
-                <div class="max-w-2xl">
-                    <form id="settings-form" class="space-y-8">
-                        <!-- Profile Photo -->
-                        <div class="glass-card p-6">
-                            <h3 class="font-bold mb-4 flex items-center gap-2">
-                                <i data-lucide="camera" class="w-4 h-4 text-teal-light"></i>
-                                Foto Profil
-                            </h3>
-                            <div class="flex items-center gap-6">
-                                <div class="relative">
-                                    <img id="photo-preview"
-                                        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%231E293B' width='100' height='100'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='%2314B8A6' font-size='40' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E"
-                                        alt="Profile"
-                                        class="w-20 h-20 rounded-2xl object-cover border-2 border-navy-border" />
-                                    <div
-                                        class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-teal flex items-center justify-center">
-                                        <i data-lucide="pencil" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label for="photo-upload" class="btn-secondary text-xs py-2 px-4 cursor-pointer">
-                                        <i data-lucide="upload" class="w-3 h-3"></i>
-                                        Unggah Foto
-                                    </label>
-                                    <input type="file" id="photo-upload" accept="image/*" class="hidden" />
-                                    <p class="text-xs text-slate-500 mt-2">Foto akan otomatis dikonversi ke versi kartun
-                                        oleh AI</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Personal Info -->
-                        <div class="glass-card p-6">
-                            <h3 class="font-bold mb-4 flex items-center gap-2">
-                                <i data-lucide="user" class="w-4 h-4 text-teal-light"></i>
-                                Informasi Pribadi
-                            </h3>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="form-label">Nama Lengkap</label>
-                                    <input type="text" value="Arya Pratama" class="form-input" />
-                                </div>
-                                <div>
-                                    <label class="form-label">Email</label>
-                                    <input type="email" value="arya@email.com" class="form-input" />
-                                </div>
-                                <div>
-                                    <label class="form-label">No. Telepon</label>
-                                    <input type="tel" value="081234567890" class="form-input" />
-                                </div>
-                                <div>
-                                    <label class="form-label">No. KTP</label>
-                                    <input type="text" value="320101••••••0001" class="form-input"
-                                        placeholder="Nomor KTP" />
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label class="form-label">Alamat</label>
-                                    <textarea rows="2" class="form-input"
-                                        placeholder="Alamat lengkap">Jakarta Selatan, DKI Jakarta</textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bank Account -->
-                        <div class="glass-card p-6">
-                            <h3 class="font-bold mb-4 flex items-center gap-2">
-                                <i data-lucide="landmark" class="w-4 h-4 text-teal-light"></i>
-                                Rekening Bank
-                            </h3>
-                            <div class="grid sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="form-label">Nama Bank</label>
-                                    <select class="form-input">
-                                        <option>BCA</option>
-                                        <option>BNI</option>
-                                        <option>BRI</option>
-                                        <option>Mandiri</option>
-                                        <option>CIMB Niaga</option>
-                                        <option>Lainnya</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label class="form-label">Nomor Rekening</label>
-                                    <input type="text" class="form-input" placeholder="Nomor rekening" />
-                                </div>
-                                <div class="sm:col-span-2">
-                                    <label class="form-label">Nama Pemilik Rekening</label>
-                                    <input type="text" value="Arya Pratama" class="form-input" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Save Button -->
-                        <div class="flex justify-end">
-                            <button type="submit" class="btn-primary">
-                                <i data-lucide="save" class="w-4 h-4"></i>
-                                Simpan Perubahan
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
+      <!-- Top Bar -->
+      <header
+        class="sticky top-0 z-50 backdrop-blur-xl bg-navy/80 border-b border-navy-border px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <button
+            id="dash-menu-btn"
+            class="mobile-menu-btn p-2 rounded-lg hover:bg-navy-light text-slate-400"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <h1 id="page-title" class="text-lg font-bold">Beranda</h1>
         </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="relative p-2 rounded-lg hover:bg-navy-light text-slate-400 transition-colors"
+          >
+            <i data-lucide="bell" class="w-5 h-5"></i>
+            <span
+              class="absolute top-1.5 right-1.5 w-2 h-2 bg-peach rounded-full"
+            ></span>
+          </button>
+          <div
+            class="w-8 h-8 rounded-full bg-gradient-to-br from-teal to-peach flex items-center justify-center text-white font-bold text-xs"
+          >
+            A
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="p-4 sm:p-6 lg:p-8">
+        <!-- ======== PANEL: BERANDA ======== -->
+        <div id="panel-beranda" class="tab-panel">
+          <!-- Welcome -->
+          <div class="glass-card p-6 sm:p-8 mb-8 relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-teal/10 to-transparent rounded-bl-full pointer-events-none"
+            ></div>
+            <div class="relative z-10">
+              <h2 class="text-2xl font-bold mb-2">
+                Selamat datang, <span class="text-gradient">Arya!</span> 👋
+              </h2>
+              <p class="text-slate-400 max-w-lg">
+                Kamu tidak sendirian. Temukan teman cerita yang siap
+                mendengarkan kamu hari ini.
+              </p>
+              <a
+                href="#"
+                class="btn-primary mt-4 inline-flex text-sm"
+                onclick="
+                  document.querySelector('[data-tab=discovery]').click();
+                  return false;
+                "
+              >
+                <i data-lucide="search" class="w-4 h-4"></i>
+                Cari Counselor
+              </a>
+            </div>
+          </div>
+
+          <!-- Stats Cards -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="dash-stat-card">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-slate-400">Counselor Online</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center"
+                >
+                  <i data-lucide="users" class="w-4 h-4 text-emerald-400"></i>
+                </div>
+              </div>
+              <p class="text-2xl font-bold">24</p>
+              <p class="text-xs text-emerald-400 mt-1">+3 dari kemarin</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-slate-400">Total Sesi</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center"
+                >
+                  <i data-lucide="calendar" class="w-4 h-4 text-teal-light"></i>
+                </div>
+              </div>
+              <p class="text-2xl font-bold">5</p>
+              <p class="text-xs text-slate-400 mt-1">Bulan ini</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-slate-400">Jam Ditemani</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-peach/10 flex items-center justify-center"
+                >
+                  <i data-lucide="clock" class="w-4 h-4 text-peach"></i>
+                </div>
+              </div>
+              <p class="text-2xl font-bold">8.5</p>
+              <p class="text-xs text-slate-400 mt-1">Jam total</p>
+            </div>
+            <div class="dash-stat-card">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-slate-400">Status Akun</span>
+                <div
+                  class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="badge-check"
+                    class="w-4 h-4 text-amber-400"
+                  ></i>
+                </div>
+              </div>
+              <p class="text-lg font-bold text-peach">Reguler</p>
+              <p
+                class="text-xs text-teal-light mt-1 cursor-pointer hover:underline"
+                onclick="document.querySelector('[data-tab=upgrade]').click()"
+              >
+                Upgrade →
+              </p>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold mb-4 flex items-center gap-2">
+              <i data-lucide="activity" class="w-4 h-4 text-teal-light"></i>
+              Aktivitas Terbaru
+            </h3>
+            <div class="space-y-3">
+              <div
+                class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 rounded-full bg-teal/10 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="message-circle"
+                    class="w-4 h-4 text-teal-light"
+                  ></i>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">
+                    Sesi online dengan
+                    <span class="text-teal-light">Sari Dewi</span> selesai
+                  </p>
+                  <p class="text-xs text-slate-500">
+                    2 jam lalu · 60 menit · Online
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 rounded-full bg-peach/10 flex items-center justify-center"
+                >
+                  <i data-lucide="calendar-plus" class="w-4 h-4 text-peach"></i>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">
+                    Sesi baru dijadwalkan dengan
+                    <span class="text-peach">Andi Pratama</span>
+                  </p>
+                  <p class="text-xs text-slate-500">
+                    Kemarin · Offline · Kafe Teman, Jakarta
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-4 p-3 rounded-xl hover:bg-navy/30 transition-colors"
+              >
+                <div
+                  class="w-10 h-10 shrink-0 rounded-full bg-emerald-500/10 flex items-center justify-center"
+                >
+                  <i
+                    data-lucide="user-plus"
+                    class="w-4 h-4 text-emerald-400"
+                  ></i>
+                </div>
+                <div class="min-w-0">
+                  <p class="text-sm font-medium">Akun berhasil dibuat</p>
+                  <p class="text-xs text-slate-500">3 hari lalu</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======== PANEL: CARI COUNSELOR ======== -->
+        <div id="panel-discovery" class="tab-panel hidden">
+          <!-- Search Bar -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-6">
+            <div class="flex-1 relative">
+              <i
+                data-lucide="search"
+                class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"
+              ></i>
+              <input
+                type="text"
+                placeholder="Cari berdasarkan nama, keahlian..."
+                class="form-input pl-10"
+              />
+            </div>
+            <div class="flex gap-2">
+              <button class="tab-btn active">Semua</button>
+              <button class="tab-btn">Online</button>
+              <button class="tab-btn">Offline</button>
+            </div>
+          </div>
+
+          <!-- Companion Grid -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Companion 1 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    A
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Andi Pratama</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge online">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"
+                      ></span>
+                      Online
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Pendengar yang baik dan berempati. Siap menemani kamu dalam
+                  suasana apa pun.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-teal/10 text-teal-light px-2 py-0.5 rounded-full"
+                    >mendengarkan</span
+                  >
+                  <span
+                    class="text-xs bg-teal/10 text-teal-light px-2 py-0.5 rounded-full"
+                    >motivasi</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 50.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.85 (128)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-primary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Mulai Sesi
+                </a>
+              </div>
+            </div>
+
+            <!-- Companion 2 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    S
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Sari Dewi</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge online">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"
+                      ></span>
+                      Online
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Psikologi lulusan UI. Passionate di bidang kesehatan mental
+                  dan empati.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-peach/10 text-peach px-2 py-0.5 rounded-full"
+                    >konseling ringan</span
+                  >
+                  <span
+                    class="text-xs bg-peach/10 text-peach px-2 py-0.5 rounded-full"
+                    >empati</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 75.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.92 (96)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-primary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Mulai Sesi
+                </a>
+              </div>
+            </div>
+
+            <!-- Companion 3 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    R
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Rizki Amanah</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge offline">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"
+                      ></span>
+                      Offline
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Suka ngobrol dan menemani. Tempatku adalah tempat ceritamu.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded-full"
+                    >teman ngobrol</span
+                  >
+                  <span
+                    class="text-xs bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded-full"
+                    >curhat</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 45.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.78 (74)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-secondary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  Jadwalkan Sesi
+                </a>
+              </div>
+            </div>
+
+            <!-- Companion 4 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    M
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Maya Lestari</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge online">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"
+                      ></span>
+                      Online
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Aktif di komunitas volunteer. Percaya setiap orang berhak
+                  didengar.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full"
+                    >volunteer</span
+                  >
+                  <span
+                    class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full"
+                    >mendengarkan</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 60.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.65 (52)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-primary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Mulai Sesi
+                </a>
+              </div>
+            </div>
+
+            <!-- Companion 5 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    B
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Budi Santoso</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge offline">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-slate-400 inline-block"
+                      ></span>
+                      Offline
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Counselor offline berpengalaman. Siap menemani di kafe atau
+                  taman.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded-full"
+                    >offline</span
+                  >
+                  <span
+                    class="text-xs bg-sky-500/10 text-sky-400 px-2 py-0.5 rounded-full"
+                    >menemani</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 55.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.70 (43)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-secondary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="calendar" class="w-4 h-4"></i>
+                  Jadwalkan Sesi
+                </a>
+              </div>
+            </div>
+
+            <!-- Companion 6 -->
+            <div class="companion-card">
+              <div class="p-5">
+                <div class="flex items-start gap-4 mb-4">
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white text-xl font-bold shrink-0"
+                  >
+                    D
+                  </div>
+                  <div class="min-w-0 flex-1">
+                    <div class="flex items-center gap-2 mb-1">
+                      <h4 class="font-bold text-sm truncate">Dina Fitriani</h4>
+                      <i
+                        data-lucide="badge-check"
+                        class="w-4 h-4 text-teal-light shrink-0"
+                      ></i>
+                    </div>
+                    <div class="online-badge online">
+                      <span
+                        class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"
+                      ></span>
+                      Online
+                    </div>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                  Lulusan konseling. Menyediakan ruang aman tanpa penghakiman.
+                </p>
+                <div class="flex flex-wrap gap-1.5 mb-4">
+                  <span
+                    class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full"
+                    >konseling</span
+                  >
+                  <span
+                    class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full"
+                    >empati</span
+                  >
+                  <span
+                    class="text-xs bg-rose-500/10 text-rose-400 px-2 py-0.5 rounded-full"
+                    >ruang aman</span
+                  >
+                </div>
+                <div
+                  class="flex items-center justify-between pt-3 border-t border-navy-border"
+                >
+                  <div>
+                    <p class="text-xs text-slate-500">Mulai dari</p>
+                    <p class="text-sm font-bold text-peach">
+                      Rp 80.000<span class="text-xs text-slate-400 font-normal"
+                        >/jam</span
+                      >
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-1 text-xs text-amber-400">
+                    <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    4.95 (187)
+                  </div>
+                </div>
+                <a
+                  href="schedule.html"
+                  class="btn-primary w-full justify-center text-sm mt-4"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Mulai Sesi
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======== PANEL: SESI SAYA ======== -->
+        <div id="panel-sessions" class="tab-panel hidden">
+          <!-- Session Tabs -->
+          <div class="flex gap-2 mb-6 overflow-x-auto pb-2">
+            <button
+              class="session-tab-btn tab-btn active"
+              data-session="active"
+            >
+              Aktif
+            </button>
+            <button class="session-tab-btn tab-btn" data-session="upcoming">
+              Mendatang
+            </button>
+            <button class="session-tab-btn tab-btn" data-session="completed">
+              Selesai
+            </button>
+          </div>
+
+          <!-- Active Sessions -->
+          <div id="session-active" class="session-panel space-y-4">
+            <div
+              class="session-card flex flex-col sm:flex-row sm:items-center gap-4"
+            >
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white font-bold shrink-0"
+                >
+                  S
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="font-bold text-sm">Sari Dewi</h4>
+                    <span class="session-badge active">Aktif</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Online · Dimulai 15 menit lalu
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-2 sm:shrink-0">
+                <a href="chat.html" class="btn-primary text-xs py-2 px-4">
+                  <i data-lucide="video" class="w-3 h-3"></i>
+                  Lanjutkan
+                </a>
+                <button
+                  class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10"
+                >
+                  Akhiri
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Sessions -->
+          <div id="session-upcoming" class="session-panel space-y-4 hidden">
+            <div
+              class="session-card flex flex-col sm:flex-row sm:items-center gap-4"
+            >
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center text-white font-bold shrink-0"
+                >
+                  A
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="font-bold text-sm">Andi Pratama</h4>
+                    <span class="session-badge upcoming">Mendatang</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Offline · Besok, 14:00 WIB · Kafe Teman, Jakarta
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-2 sm:shrink-0">
+                <button class="btn-secondary text-xs py-2 px-4">
+                  <i data-lucide="edit" class="w-3 h-3"></i>
+                  Ubah Jadwal
+                </button>
+                <button
+                  class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10"
+                >
+                  Batalkan
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="session-card flex flex-col sm:flex-row sm:items-center gap-4"
+            >
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-white font-bold shrink-0"
+                >
+                  D
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="font-bold text-sm">Dina Fitriani</h4>
+                    <span class="session-badge upcoming">Mendatang</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Online · 24 Feb 2026, 10:00 WIB
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-2 sm:shrink-0">
+                <button class="btn-secondary text-xs py-2 px-4">
+                  <i data-lucide="edit" class="w-3 h-3"></i>
+                  Ubah Jadwal
+                </button>
+                <button
+                  class="btn-secondary text-xs py-2 px-4 text-red-400 border-red-400 hover:bg-red-500/10"
+                >
+                  Batalkan
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Completed Sessions -->
+          <div id="session-completed" class="session-panel space-y-4 hidden">
+            <div
+              class="session-card flex flex-col sm:flex-row sm:items-center gap-4 opacity-75"
+            >
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center text-white font-bold shrink-0"
+                >
+                  M
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="font-bold text-sm">Maya Lestari</h4>
+                    <span class="session-badge completed">Selesai</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Online · 18 Feb 2026 · 45 menit · Rp 45.000
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-2 sm:shrink-0">
+                <button class="btn-secondary text-xs py-2 px-4">
+                  <i data-lucide="star" class="w-3 h-3"></i>
+                  Beri Rating
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="session-card flex flex-col sm:flex-row sm:items-center gap-4 opacity-75"
+            >
+              <div class="flex items-center gap-4 flex-1 min-w-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center text-white font-bold shrink-0"
+                >
+                  S
+                </div>
+                <div class="min-w-0">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <h4 class="font-bold text-sm">Sari Dewi</h4>
+                    <span class="session-badge completed">Selesai</span>
+                  </div>
+                  <p class="text-xs text-slate-400 mt-1">
+                    Online · 15 Feb 2026 · 60 menit · Rp 75.000
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-2 sm:shrink-0">
+                <div class="flex items-center gap-1 text-xs text-amber-400">
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                  <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======== PANEL: UPGRADE PREMIUM ======== -->
+        <div id="panel-upgrade" class="tab-panel hidden">
+          <div class="max-w-3xl mx-auto">
+            <!-- Upgrade Hero -->
+            <div
+              class="glass-card pricing-card featured p-8 sm:p-10 text-center mb-8 relative overflow-hidden"
+            >
+              <div class="pricing-badge">Upgrade</div>
+              <div
+                class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center mb-6"
+              >
+                <i data-lucide="crown" class="w-8 h-8 text-white"></i>
+              </div>
+              <h2 class="text-2xl font-bold mb-2">
+                Upgrade ke <span class="text-gradient">Premium</span>
+              </h2>
+              <p class="text-slate-400 mb-6 max-w-md mx-auto">
+                Dapatkan akses penuh ke semua fitur Nemenin dan nikmati
+                pengalaman terbaik.
+              </p>
+              <div class="mb-8">
+                <span class="text-5xl font-extrabold text-gradient"
+                  >Rp 99.000</span
+                >
+                <span class="text-slate-400"> / 6 bulan</span>
+              </div>
+
+              <!-- Feature Comparison -->
+              <div class="text-left max-w-lg mx-auto mb-8">
+                <div
+                  class="grid grid-cols-[1fr,auto,auto] gap-x-8 gap-y-3 text-sm"
+                >
+                  <div class="font-semibold text-slate-300">Fitur</div>
+                  <div class="font-semibold text-slate-400 text-center">
+                    Reguler
+                  </div>
+                  <div class="font-semibold text-teal-light text-center">
+                    Premium
+                  </div>
+
+                  <div class="text-slate-400">Visibilitas Katalog</div>
+                  <div class="text-center text-slate-500">Terbatas</div>
+                  <div class="text-center text-teal-light">Unlimited</div>
+
+                  <div class="text-slate-400">Konsultasi Online</div>
+                  <div class="text-center">
+                    <i
+                      data-lucide="check"
+                      class="w-4 h-4 text-teal-light inline"
+                    ></i>
+                  </div>
+                  <div class="text-center">
+                    <i
+                      data-lucide="check"
+                      class="w-4 h-4 text-teal-light inline"
+                    ></i>
+                  </div>
+
+                  <div class="text-slate-400">Konsultasi Offline</div>
+                  <div class="text-center text-slate-500">Berbayar</div>
+                  <div class="text-center text-teal-light font-bold">
+                    Gratis
+                  </div>
+
+                  <div class="text-slate-400">Masa Aktif</div>
+                  <div class="text-center text-slate-500">1 bulan</div>
+                  <div class="text-center text-teal-light">6 bulan</div>
+
+                  <div class="text-slate-400">Komunikasi WA</div>
+                  <div class="text-center">
+                    <i data-lucide="x" class="w-4 h-4 text-red-400 inline"></i>
+                  </div>
+                  <div class="text-center">
+                    <i
+                      data-lucide="check"
+                      class="w-4 h-4 text-teal-light inline"
+                    ></i>
+                  </div>
+
+                  <div class="text-slate-400">Event & Couple Matching</div>
+                  <div class="text-center">
+                    <i data-lucide="x" class="w-4 h-4 text-red-400 inline"></i>
+                  </div>
+                  <div class="text-center">
+                    <i
+                      data-lucide="check"
+                      class="w-4 h-4 text-teal-light inline"
+                    ></i>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary text-base px-8">
+                <i data-lucide="zap" class="w-5 h-5"></i>
+                Upgrade Sekarang
+              </button>
+              <p class="text-xs text-slate-500 mt-3">
+                Pembayaran aman melalui payment gateway terpercaya
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ======== PANEL: PENGATURAN ======== -->
+        <div id="panel-settings" class="tab-panel hidden">
+          <div class="max-w-2xl">
+            <form id="settings-form" class="space-y-8">
+              <!-- Profile Photo -->
+              <div class="glass-card p-6">
+                <h3 class="font-bold mb-4 flex items-center gap-2">
+                  <i data-lucide="camera" class="w-4 h-4 text-teal-light"></i>
+                  Foto Profil
+                </h3>
+                <div class="flex items-center gap-6">
+                  <div class="relative">
+                    <img
+                      id="photo-preview"
+                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%231E293B' width='100' height='100'/%3E%3Ctext x='50' y='55' text-anchor='middle' fill='%2314B8A6' font-size='40' font-family='sans-serif'%3EA%3C/text%3E%3C/svg%3E"
+                      alt="Profile"
+                      class="w-20 h-20 rounded-2xl object-cover border-2 border-navy-border"
+                    />
+                    <div
+                      class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-teal flex items-center justify-center"
+                    >
+                      <i data-lucide="pencil" class="w-3 h-3 text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      for="photo-upload"
+                      class="btn-secondary text-xs py-2 px-4 cursor-pointer"
+                    >
+                      <i data-lucide="upload" class="w-3 h-3"></i>
+                      Unggah Foto
+                    </label>
+                    <input
+                      type="file"
+                      id="photo-upload"
+                      accept="image/*"
+                      class="hidden"
+                    />
+                    <p class="text-xs text-slate-500 mt-2">
+                      Foto akan otomatis dikonversi ke versi kartun oleh AI
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Personal Info -->
+              <div class="glass-card p-6">
+                <h3 class="font-bold mb-4 flex items-center gap-2">
+                  <i data-lucide="user" class="w-4 h-4 text-teal-light"></i>
+                  Informasi Pribadi
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="form-label">Nama Lengkap</label>
+                    <input
+                      type="text"
+                      value="Arya Pratama"
+                      class="form-input"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">Email</label>
+                    <input
+                      type="email"
+                      value="arya@email.com"
+                      class="form-input"
+                    />
+                  </div>
+                  <div>
+                    <label class="form-label">No. Telepon</label>
+                    <input type="tel" value="081234567890" class="form-input" />
+                  </div>
+                  <div>
+                    <label class="form-label">No. KTP</label>
+                    <input
+                      type="text"
+                      value="320101••••••0001"
+                      class="form-input"
+                      placeholder="Nomor KTP"
+                    />
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label class="form-label">Alamat</label>
+                    <textarea
+                      rows="2"
+                      class="form-input"
+                      placeholder="Alamat lengkap"
+                    >
+Jakarta Selatan, DKI Jakarta</textarea
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bank Account -->
+              <div class="glass-card p-6">
+                <h3 class="font-bold mb-4 flex items-center gap-2">
+                  <i data-lucide="landmark" class="w-4 h-4 text-teal-light"></i>
+                  Rekening Bank
+                </h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="form-label">Nama Bank</label>
+                    <select class="form-input">
+                      <option>BCA</option>
+                      <option>BNI</option>
+                      <option>BRI</option>
+                      <option>Mandiri</option>
+                      <option>CIMB Niaga</option>
+                      <option>Lainnya</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="form-label">Nomor Rekening</label>
+                    <input
+                      type="text"
+                      class="form-input"
+                      placeholder="Nomor rekening"
+                    />
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label class="form-label">Nama Pemilik Rekening</label>
+                    <input
+                      type="text"
+                      value="Arya Pratama"
+                      class="form-input"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Save Button -->
+              <div class="flex justify-end">
+                <button type="submit" class="btn-primary">
+                  <i data-lucide="save" class="w-4 h-4"></i>
+                  Simpan Perubahan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
     <script src="js/dashboard.js"></script>
     <script>
-        lucide.createIcons();
-        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+      lucide.createIcons();
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
         requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
     </script>
-</body>
-
+  </body>
 </html>

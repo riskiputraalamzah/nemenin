@@ -1,330 +1,711 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bagaimana Nemenin Bekerja — Langkah Menuju Koneksi</title>
-    <meta name="description"
-        content="Pelajari bagaimana Nemenin membantu kamu menemukan ruang aman untuk didengar dan ditemani melalui langkah-langkah yang transparan dan aman." />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="Pelajari bagaimana Nemenin membantu kamu menemukan ruang aman untuk didengar dan ditemani melalui langkah-langkah yang transparan dan aman."
+    />
+    <meta
+      name="keywords"
+      content="cara kerja nemenin, panduan nemenin, cari teman curhat, keamanan nemenin, privasi pengguna"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://riskiputraalamzah.github.io/nemenin/how-it-works.html"
+    />
+    <meta
+      property="og:title"
+      content="Bagaimana Nemenin Bekerja — Langkah Menuju Koneksi"
+    />
+    <meta
+      property="og:description"
+      content="Pelajari bagaimana Nemenin membantu kamu menemukan ruang aman untuk didengar dan ditemani melalui langkah-langkah yang transparan dan aman."
+    />
+    <meta
+      property="og:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://riskiputraalamzah.github.io/nemenin/how-it-works.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Bagaimana Nemenin Bekerja — Langkah Menuju Koneksi"
+    />
+    <meta
+      property="twitter:description"
+      content="Pelajari bagaimana Nemenin membantu kamu menemukan ruang aman untuk didengar dan ditemani melalui langkah-langkah yang transparan dan aman."
+    />
+    <meta
+      property="twitter:image"
+      content="https://riskiputraalamzah.github.io/nemenin/assets/og-image.jpg"
+    />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
-                    colors: {
-                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
-                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
-                        navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { jakarta: ['"Plus Jakarta Sans"', "sans-serif"] },
+            colors: {
+              teal: { DEFAULT: "#E07A5F", light: "#F2A68B", dark: "#C1574A" },
+              peach: { DEFAULT: "#F2CC8F", light: "#F7DBA7", dark: "#D4A55A" },
+              navy: {
+                DEFAULT: "#0F172A",
+                light: "#1E293B",
+                card: "#1E293B",
+                border: "#334155",
+              },
+              warm: {
+                orange: "#E8833A",
+                yellow: "#F5C542",
+                blue: "#F2A68B",
+                sky: "#89C4F4",
+              },
+            },
+          },
+        },
+      };
     </script>
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
-<body class="font-jakarta bg-navy text-slate-100 overflow-x-hidden">
+    <!-- Lenis Smooth Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1/dist/lenis.css" />
 
-    <!-- Header / Navbar (Reused from index.html) -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-7xl z-[1000]">
-        <div class="glass-card px-6 py-4 flex items-center justify-between border-navy-border/50">
-            <a href="index.html" class="flex items-center gap-2 text-xl font-bold">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center">
-                    <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
-                </div>
-                <span>Nemenin</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="index.html" class="hover:text-teal transition-colors">Beranda</a>
-                <a href="register.html" class="btn-primary py-2 px-5 text-xs">Daftar Sekarang</a>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="font-jakarta overflow-x-hidden">
+    <!-- ============================================================
+       NAVBAR — Modern floating glass style
+       ============================================================ -->
+    <nav id="navbar" class="navbar">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="navbar-inner flex items-center justify-between">
+          <!-- Logo -->
+          <a
+            href="index.html"
+            class="flex items-center gap-2.5 text-lg font-bold text-white no-underline shrink-0"
+          >
+            <div
+              class="w-9 h-9 rounded-xl bg-gradient-to-br from-teal to-peach flex items-center justify-center shadow-lg shadow-teal/20"
+            >
+              <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
             </div>
+            <span class="tracking-tight">Nemenin</span>
+          </a>
+
+          <!-- Desktop Nav Links — pill bg -->
+          <div
+            class="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/[0.06] rounded-full px-1.5 py-1"
+          >
+            <a href="index.html" class="nav-link-pill">Beranda</a>
+            <a href="index.html#features" class="nav-link-pill">Fitur</a>
+            <a
+              href="how-it-works.html"
+              class="nav-link-pill bg-white/[0.1] text-white shadow-inner"
+              >Cara Kerja</a
+            >
+            <a href="index.html#pricing" class="nav-link-pill">Harga</a>
+          </div>
+
+          <!-- Desktop CTA -->
+          <div class="hidden md:flex items-center gap-3 shrink-0">
+            <a
+              href="login.html"
+              class="text-sm text-slate-300 hover:text-white font-medium transition-colors"
+              >Masuk</a
+            >
+            <a href="register.html" class="nav-cta-btn">
+              Daftar Gratis
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Mobile Hamburger -->
+          <button
+            id="menu-btn"
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/[0.08] text-slate-300 hover:text-white hover:bg-white/[0.1] transition-all"
+          >
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
         </div>
+      </div>
     </nav>
 
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav-backdrop" class="mobile-nav-backdrop"></div>
+    <div id="mobile-nav" class="mobile-nav-drawer">
+      <div class="flex items-center justify-between mb-8">
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-lg font-bold text-white no-underline"
+        >
+          <div
+            class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center"
+          >
+            <i data-lucide="heart-handshake" class="w-4 h-4 text-white"></i>
+          </div>
+          <span>Nemenin</span>
+        </a>
+        <button
+          id="close-menu-btn"
+          class="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.06] border border-white/[0.08] text-slate-400 hover:text-white transition-all"
+        >
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="flex flex-col gap-1">
+        <a href="index.html" class="mobile-nav-link">
+          <i data-lucide="home" class="w-5 h-5 text-teal-light"></i>
+          Beranda
+        </a>
+        <a href="index.html#features" class="mobile-nav-link">
+          <i data-lucide="sparkles" class="w-5 h-5 text-teal-light"></i>
+          Fitur
+        </a>
+        <a
+          href="how-it-works.html"
+          class="mobile-nav-link bg-white/[0.06] text-white"
+        >
+          <i data-lucide="route" class="w-5 h-5 text-teal-light"></i>
+          Cara Kerja
+        </a>
+        <a href="index.html#pricing" class="mobile-nav-link">
+          <i data-lucide="tag" class="w-5 h-5 text-teal-light"></i>
+          Harga
+        </a>
+      </div>
+      <div
+        class="mt-auto pt-6 flex flex-col gap-3 border-t border-white/[0.06]"
+      >
+        <a
+          href="login.html"
+          class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-white/[0.06] border border-white/[0.08] text-slate-200 font-semibold text-sm hover:bg-white/[0.1] transition-all"
+        >
+          <i data-lucide="log-in" class="w-4 h-4"></i>
+          Masuk
+        </a>
+        <a href="register.html" class="nav-cta-btn justify-center w-full">
+          Daftar Gratis
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
     <main>
-        <!-- Scene 1: The Emotional Hook -->
-        <section class="min-h-screen flex items-center justify-center relative px-4 overflow-hidden">
-            <div class="max-w-4xl text-center z-10 reveal">
+      <!-- Scene 1: The Emotional Hook -->
+      <section
+        class="hero-gradient min-h-screen flex items-center justify-center relative px-4 overflow-hidden"
+      >
+        <div class="max-w-4xl text-center z-10 reveal">
+          <span
+            class="inline-block py-1 px-3 rounded-full bg-teal/10 text-teal text-[10px] font-bold tracking-wider uppercase mb-6"
+            >Sebuah Perjalanan</span
+          >
+          <h1 class="text-5xl sm:text-7xl font-extrabold mb-8 leading-tight">
+            Kadang, yang kita butuhkan hanyalah
+            <span class="text-gradient">kehadiran</span>.
+          </h1>
+          <p
+            class="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-12"
+          >
+            Nemenin hadir bukan sekadar aplikasi, tapi sebuah jembatan saat kamu
+            merasa "sepi dalam keramaian". Kita tidak diciptakan untuk berjalan
+            sendirian.
+          </p>
+          <div class="flex flex-col items-center gap-4 reveal-delay-2">
+            <p class="text-xs text-slate-500 uppercase tracking-widest">
+              Scroll untuk memulai
+            </p>
+            <div class="animate-bounce text-teal/50">
+              <i data-lucide="chevron-down" class="w-6 h-6"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Atmospheric background elements -->
+        <div
+          class="warm-blob w-96 h-96 bg-teal/10 -top-20 -left-20 absolute"
+          data-parallax="0.3"
+        ></div>
+        <div
+          class="warm-blob w-[500px] h-[500px] bg-peach/5 bottom-0 -right-20 absolute"
+          data-parallax="0.2"
+        ></div>
+      </section>
+
+      <!-- Scene 2: The Problem (The Weight of Solitude) -->
+      <section class="py-24 relative overflow-hidden bg-navy-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal">
+              <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
+                "Sepi di Tengah Keramaian" <br />
                 <span
-                    class="inline-block py-1 px-3 rounded-full bg-teal/10 text-teal text-[10px] font-bold tracking-wider uppercase mb-6">Sebuah
-                    Perjalanan</span>
-                <h1 class="text-5xl sm:text-7xl font-extrabold mb-8 leading-tight">
-                    Kadang, yang kita butuhkan hanyalah <span class="text-gradient">kehadiran</span>.
-                </h1>
-                <p class="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-12">
-                    Nemenin hadir bukan sekadar aplikasi, tapi sebuah jembatan saat kamu merasa "sepi dalam keramaian".
-                    Kita tidak diciptakan untuk berjalan sendirian.
+                  class="text-teal text-2xl sm:text-3xl font-semibold opacity-80"
+                  >Bukan sekadar kiasan.</span
+                >
+              </h2>
+              <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+                <p>
+                  Kita hidup di era yang paling terhubung secara digital, namun
+                  jutaan orang merasa lebih terasing dari sebelumnya.
                 </p>
-                <div class="flex flex-col items-center gap-4 reveal-delay-2">
-                    <p class="text-xs text-slate-500 uppercase tracking-widest">Scroll untuk memulai</p>
-                    <div class="animate-bounce text-teal/50">
-                        <i data-lucide="chevron-down" class="w-6 h-6"></i>
-                    </div>
+                <p>
+                  Ada cerita yang tak bisa dibagikan ke keluarga, emosi yang tak
+                  ingin ditunjukkan ke teman kantor, dan kebutuhan sosial yang
+                  terabaikan karena kesibukan karier.
+                </p>
+                <div class="pt-4 flex items-center gap-4 text-white italic">
+                  <div class="w-12 h-[1px] bg-teal"></div>
+                  <span
+                    >Kamu tidak butuh konseling medis, kamu hanya ingin
+                    didengar.</span
+                  >
                 </div>
+              </div>
             </div>
-
-            <!-- Atmospheric background elements -->
-            <div class="hero-blob w-96 h-96 bg-teal/10 -top-20 -left-20 absolute filter blur-3xl rounded-full"></div>
             <div
-                class="hero-blob w-[500px] h-[500px] bg-peach/5 bottom-0 -right-20 absolute filter blur-3xl rounded-full">
-            </div>
-        </section>
-
-        <!-- Scene 2: The Problem (The Weight of Solitude) -->
-        <section class="py-24 relative overflow-hidden bg-navy-light/30">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="reveal">
-                        <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">
-                            "Sepi di Tengah Keramaian" <br>
-                            <span class="text-teal text-2xl sm:text-3xl font-semibold opacity-80">Bukan sekadar
-                                kiasan.</span>
-                        </h2>
-                        <div class="space-y-6 text-slate-400 text-lg leading-relaxed">
-                            <p>
-                                Kita hidup di era yang paling terhubung secara digital, namun jutaan orang merasa lebih
-                                terasing dari sebelumnya.
-                            </p>
-                            <p>
-                                Ada cerita yang tak bisa dibagikan ke keluarga, emosi yang tak ingin ditunjukkan ke
-                                teman kantor, dan kebutuhan sosial yang terabaikan karena kesibukan karier.
-                            </p>
-                            <div class="pt-4 flex items-center gap-4 text-white italic">
-                                <div class="w-12 h-[1px] bg-teal"></div>
-                                <span>Kamu tidak butuh konseling medis, kamu hanya ingin didengar.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="relative reveal-delay-2 flex justify-center lg:justify-end">
-                        <div
-                            class="relative w-full max-w-md aspect-square bg-navy-card rounded-2xl p-8 border border-navy-border/50 shadow-2xl flex flex-col justify-center">
-                            <div
-                                class="absolute -top-4 -left-4 w-12 h-12 bg-teal rounded-lg flex items-center justify-center shadow-lg animate-pulse">
-                                <i data-lucide="message-square" class="text-white w-6 h-6"></i>
-                            </div>
-                            <div class="space-y-4">
-                                <div class="h-4 w-3/4 bg-slate-700/50 rounded-full"></div>
-                                <div class="h-4 w-1/2 bg-slate-700/50 rounded-full"></div>
-                                <div class="h-4 w-2/3 bg-slate-700/50 rounded-full"></div>
-                                <div class="pt-6">
-                                    <p class="text-slate-500 text-sm">"Aku cuma pengen cerita aja hari ini, capek
-                                        banget..."</p>
-                                </div>
-                            </div>
-                            <!-- Floating circles for depth -->
-                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-peach/10 rounded-full filter blur-xl">
-                            </div>
-                        </div>
-                    </div>
+              class="relative reveal-delay-2 flex justify-center lg:justify-end"
+            >
+              <div
+                class="relative w-full max-w-md aspect-square bg-navy-card rounded-2xl p-8 border border-navy-border/50 shadow-2xl flex flex-col justify-center"
+              >
+                <div
+                  class="absolute -top-4 -left-4 w-12 h-12 bg-teal rounded-lg flex items-center justify-center shadow-lg animate-pulse"
+                >
+                  <i
+                    data-lucide="message-square"
+                    class="text-white w-6 h-6"
+                  ></i>
                 </div>
-            </div>
-        </section>
-
-        <!-- Scene 3: The Steps (The Journey) -->
-        <section class="py-32 bg-navy relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-24 reveal">
-                    <h2 class="text-3xl sm:text-5xl font-bold mb-6">Tiga Langkah Menuju <span
-                            class="text-gradient">Kenyamanan</span></h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto text-lg">Proses sederhana yang kami rancang untuk
-                        memastikan interaksi yang aman, beretika, dan sepenuhnya manusiawi.</p>
+                <div class="space-y-4">
+                  <div class="h-4 w-3/4 bg-slate-700/50 rounded-full"></div>
+                  <div class="h-4 w-1/2 bg-slate-700/50 rounded-full"></div>
+                  <div class="h-4 w-2/3 bg-slate-700/50 rounded-full"></div>
+                  <div class="pt-6">
+                    <p class="text-slate-500 text-sm">
+                      "Aku cuma pengen cerita aja hari ini, capek banget..."
+                    </p>
+                  </div>
                 </div>
-
-                <div class="grid md:grid-cols-3 gap-12 relative">
-                    <!-- Progress Line (Desktop) -->
-                    <div
-                        class="hidden md:block absolute top-[100px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-teal/20 via-peach/20 to-teal/20">
-                    </div>
-
-                    <!-- Step 1 -->
-                    <div class="relative flex flex-col items-center text-center reveal">
-                        <div
-                            class="w-20 h-20 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500">
-                            <span
-                                class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center">1</span>
-                            <i data-lucide="user-plus" class="w-10 h-10 text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Pilih Peranmu</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            Apakah kamu ingin <strong>di-temani</strong> atau kamu siap menjadi
-                            <strong>pen-damping</strong>? Daftar dan lengkapi profil emosionalmu.
-                        </p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="relative flex flex-col items-center text-center reveal reveal-delay-2">
-                        <div
-                            class="w-20 h-20 rounded-2xl bg-peach/10 border border-peach/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500">
-                            <span
-                                class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-peach text-navy text-sm font-bold flex items-center justify-center">2</span>
-                            <i data-lucide="shield-check" class="w-10 h-10 text-peach"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Verifikasi & Cocokkan</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            Tim kami memastikan setiap akun terverifikasi. Pilih pendamping yang sesuai dengan
-                            kebutuhanmu: teman curhat atau teman aktivitas sosial.
-                        </p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="relative flex flex-col items-center text-center reveal reveal-delay-3">
-                        <div
-                            class="w-20 h-20 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500">
-                            <span
-                                class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center">3</span>
-                            <i data-lucide="smile" class="w-10 h-10 text-teal"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Mulai Terhubung</h3>
-                        <p class="text-slate-400 leading-relaxed">
-                            Interaksi dimulai dalam ruang aman dengan batasan yang jelas. Rasakan pengalaman didengar
-                            dan ditemani tanpa dihakimi.
-                        </p>
-                    </div>
-                </div>
+                <!-- Floating circles for depth -->
+                <div
+                  class="absolute -bottom-6 -right-6 w-32 h-32 bg-peach/10 rounded-full filter blur-xl"
+                ></div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Scene 4: Safety & Ethical Commitment -->
-        <section class="py-24 bg-navy-light/50 border-y border-navy-border/30">
-            <div class="max-w-5xl mx-auto px-4 text-center reveal">
-                <i data-lucide="heart" class="w-12 h-12 text-teal mx-auto mb-8 animate-pulse"></i>
-                <h2 class="text-3xl font-bold mb-6">Komitmen Etika & Keamanan</h2>
-                <p class="text-slate-300 text-lg leading-relaxed mb-10">
-                    Bukan aplikasi kencan, bukan layanan bebas tanpa aturan. <br class="hidden sm:block">
-                    Nemenin adalah platform dengan <strong>Kode Etik Ketat</strong>. Setiap interaksi dipantau oleh
-                    sistem pendukung kami untuk memastikan bahasa tetap sopan, konteks tetap jelas, dan martabat manusia
-                    tetap terjaga.
+      <!-- Scene 3: The Steps (The Journey) -->
+      <section class="py-32 bg-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-24 reveal">
+            <h2 class="text-3xl sm:text-5xl font-bold mb-6">
+              Tiga Langkah Menuju <span class="text-gradient">Kenyamanan</span>
+            </h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+              Proses sederhana yang kami rancang untuk memastikan interaksi yang
+              aman, beretika, dan sepenuhnya manusiawi.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-12 relative">
+            <!-- Progress Line (Desktop) -->
+            <div
+              class="hidden md:block absolute top-[100px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-teal/20 via-peach/20 to-teal/20"
+            ></div>
+
+            <!-- Step 1 -->
+            <div class="relative flex flex-col items-center text-center reveal">
+              <div
+                class="w-20 h-20 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500"
+              >
+                <span
+                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center"
+                  >1</span
+                >
+                <i data-lucide="user-plus" class="w-10 h-10 text-teal"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Pilih Peranmu</h3>
+              <p class="text-slate-400 leading-relaxed">
+                Apakah kamu ingin <strong>di-temani</strong> atau kamu siap
+                menjadi <strong>pen-damping</strong>? Daftar dan lengkapi profil
+                emosionalmu.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="relative flex flex-col items-center text-center reveal reveal-delay-2"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-peach/10 border border-peach/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500"
+              >
+                <span
+                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-peach text-navy text-sm font-bold flex items-center justify-center"
+                  >2</span
+                >
+                <i data-lucide="shield-check" class="w-10 h-10 text-peach"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Verifikasi & Cocokkan</h3>
+              <p class="text-slate-400 leading-relaxed">
+                Tim kami memastikan setiap akun terverifikasi. Pilih pendamping
+                yang sesuai dengan kebutuhanmu: teman curhat atau teman
+                aktivitas sosial.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="relative flex flex-col items-center text-center reveal reveal-delay-3"
+            >
+              <div
+                class="w-20 h-20 rounded-2xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-8 relative z-10 transition-transform hover:scale-110 duration-500"
+              >
+                <span
+                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-teal text-white text-sm font-bold flex items-center justify-center"
+                  >3</span
+                >
+                <i data-lucide="smile" class="w-10 h-10 text-teal"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Mulai Terhubung</h3>
+              <p class="text-slate-400 leading-relaxed">
+                Interaksi dimulai dalam ruang aman dengan batasan yang jelas.
+                Rasakan pengalaman didengar dan ditemani tanpa dihakimi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 4: Safety & Ethical Commitment -->
+      <section class="py-24 relative overflow-hidden">
+        <!-- Background Decoration -->
+        <div
+          class="absolute inset-0 bg-navy-light/30 skew-y-3 transform origin-bottom-left scale-110 z-0 pointer-events-none"
+        ></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+          <!-- Section Header -->
+          <div class="text-center mb-16 reveal">
+            <div
+              class="inline-flex items-center justify-center p-4 rounded-full bg-teal/10 mb-6 animate-pulse"
+            >
+              <i data-lucide="shield-check" class="w-10 h-10 text-teal"></i>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+              Komitmen <span class="text-gradient">Etika & Keamanan</span>
+            </h2>
+            <p class="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+              Nemenin dibangun di atas pondasi kepercayaan. Kami menerapkan
+              standar keamanan berlapis untuk memastikan setiap interaksi aman,
+              nyaman, dan manusiawi.
+            </p>
+          </div>
+
+          <!-- Interactive Cards Grid -->
+          <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+            <!-- Card 1: Terverifikasi -->
+            <div
+              class="group relative p-8 rounded-2xl bg-navy-card border border-navy-border hover:border-teal/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal/10 reveal reveal-delay-1 overflow-hidden"
+            >
+              <div
+                class="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity duration-500 transform group-hover:scale-110 group-hover:rotate-12"
+              >
+                <i data-lucide="badge-check" class="w-40 h-40 text-teal"></i>
+              </div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center mb-6 group-hover:bg-teal group-hover:text-white transition-colors duration-300"
+                >
+                  <i
+                    data-lucide="user-check"
+                    class="w-7 h-7 text-teal group-hover:text-white"
+                  ></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Terverifikasi Ketat
+                </h3>
+                <p
+                  class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors"
+                >
+                  Setiap counselor melalui proses verifikasi identitas (KTP),
+                  wawancara, dan background check. Kami memastikan kamu
+                  berinteraksi dengan orang asli yang aman.
                 </p>
-                <div class="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                    <div class="p-4 rounded-xl border border-navy-border/50 bg-navy/30">
-                        <h4 class="font-bold text-teal mb-2">Terverifikasi</h4>
-                        <p class="text-xs text-slate-500">Seluruh pendamping melalui proses screening identitas yang
-                            ketat.</p>
-                    </div>
-                    <div class="p-4 rounded-xl border border-navy-border/50 bg-navy/30">
-                        <h4 class="font-bold text-peach mb-2">Privasi Penuh</h4>
-                        <p class="text-xs text-slate-500">Data pribadimu adalah milikmu. Kami hanya menghubungkan emosi.
-                        </p>
-                    </div>
-                    <div class="p-4 rounded-xl border border-navy-border/50 bg-navy/30">
-                        <h4 class="font-bold text-teal mb-2">Tanpa Tuntutan</h4>
-                        <p class="text-xs text-slate-500">Interaksi profesional tanpa ikatan relasi romantis atau
-                            permanen.</p>
-                    </div>
-                </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Final CTA -->
-        <section class="py-32 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto px-4 text-center reveal">
-                <h2 class="text-4xl sm:text-5xl font-extrabold mb-8 leading-tight">
-                    Siap untuk tidak merasa <br> <span class="text-gradient">sendiri</span> lagi?
-                </h2>
-                <p class="text-slate-400 text-lg mb-12">
-                    Bergabunglah dengan ribuan orang yang mulai memprioritaskan kesehatan emosional dan kebutuhan sosial
-                    mereka secara sehat.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="register.html" class="btn-primary py-4 px-10 text-lg font-bold">
-                        Daftar Gratis Sekarang
-                    </a>
+            <!-- Card 2: Privasi -->
+            <div
+              class="group relative p-8 rounded-2xl bg-navy-card border border-navy-border hover:border-peach/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-peach/10 reveal reveal-delay-2 overflow-hidden"
+            >
+              <div
+                class="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity duration-500 transform group-hover:scale-110 group-hover:rotate-12"
+              >
+                <i data-lucide="fingerprint" class="w-40 h-40 text-peach"></i>
+              </div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-peach/10 flex items-center justify-center mb-6 group-hover:bg-peach group-hover:text-navy transition-colors duration-300"
+                >
+                  <i
+                    data-lucide="lock"
+                    class="w-7 h-7 text-peach group-hover:text-navy"
+                  ></i>
                 </div>
+                <h3 class="text-xl font-bold text-white mb-3">
+                  Privasi Terjaga
+                </h3>
+                <p
+                  class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors"
+                >
+                  Identitas aslimu aman bersama kami. Kamu punya kendali penuh
+                  atas informasi yang ingin dibagikan. Chat terenkripsi dan data
+                  tidak dijual.
+                </p>
+              </div>
             </div>
-            <!-- Background blobs -->
-            <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-teal/5 filter blur-3xl rounded-full"></div>
-            <div class="absolute -top-20 -right-20 w-96 h-96 bg-peach/5 filter blur-3xl rounded-full"></div>
-        </section>
+
+            <!-- Card 3: Batasan -->
+            <div
+              class="group relative p-8 rounded-2xl bg-navy-card border border-navy-border hover:border-teal-light/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-teal-light/10 reveal reveal-delay-3 overflow-hidden"
+            >
+              <div
+                class="absolute -right-6 -top-6 opacity-5 group-hover:opacity-10 transition-opacity duration-500 transform group-hover:scale-110 group-hover:rotate-12"
+              >
+                <i
+                  data-lucide="shield-alert"
+                  class="w-40 h-40 text-teal-light"
+                ></i>
+              </div>
+              <div class="relative z-10">
+                <div
+                  class="w-14 h-14 rounded-xl bg-teal-light/10 flex items-center justify-center mb-6 group-hover:bg-teal-light group-hover:text-white transition-colors duration-300"
+                >
+                  <i
+                    data-lucide="octagon-alert"
+                    class="w-7 h-7 text-teal-light group-hover:text-white"
+                  ></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Batasan Jelas</h3>
+                <p
+                  class="text-slate-400 text-sm leading-relaxed group-hover:text-slate-200 transition-colors"
+                >
+                  Profesional tanpa baper. Dilarang keras melakukan tindakan
+                  asusila, romantis, atau melanggar hukum. Tombol lapor tersedia
+                  24/7.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Strip -->
+          <div
+            class="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-6 md:gap-12 opacity-80 reveal"
+          >
+            <div
+              class="flex items-center gap-3 px-4 py-2 rounded-full bg-navy/40 border border-white/5"
+            >
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-teal"></i>
+              <span class="text-sm font-semibold text-slate-300"
+                >Zero Tolerance Policy</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 px-4 py-2 rounded-full bg-navy/40 border border-white/5"
+            >
+              <i data-lucide="history" class="w-5 h-5 text-peach"></i>
+              <span class="text-sm font-semibold text-slate-300"
+                >24/7 Monitoring</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-3 px-4 py-2 rounded-full bg-navy/40 border border-white/5"
+            >
+              <i
+                data-lucide="heart-handshake"
+                class="w-5 h-5 text-teal-light"
+              ></i>
+              <span class="text-sm font-semibold text-slate-300"
+                >Code of Conduct</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="py-32 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 text-center reveal">
+          <h2 class="text-4xl sm:text-5xl font-extrabold mb-8 leading-tight">
+            Siap untuk tidak merasa <br />
+            <span class="text-gradient">sendiri</span> lagi?
+          </h2>
+          <p class="text-slate-400 text-lg mb-12">
+            Bergabunglah dengan ribuan orang yang mulai memprioritaskan
+            kesehatan emosional dan kebutuhan sosial mereka secara sehat.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="register.html"
+              class="btn-primary py-4 px-10 text-lg font-bold"
+            >
+              Daftar Gratis Sekarang
+            </a>
+          </div>
+        </div>
+        <!-- Background blobs -->
+        <div
+          class="absolute -bottom-20 -left-20 w-96 h-96 bg-teal/5 filter blur-3xl rounded-full"
+        ></div>
+        <div
+          class="absolute -top-20 -right-20 w-96 h-96 bg-peach/5 filter blur-3xl rounded-full"
+        ></div>
+      </section>
     </main>
 
     <!-- Footer Wave Divider -->
-    <div class="wave-divider" style="margin-top: -2px; line-height: 0; overflow: hidden;">
-        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
-            style="width: 100%; height: 60px; display: block;">
-            <path d="M0,40 C360,100 720,0 1080,60 C1260,80 1380,50 1440,40 L1440,100 L0,100 Z"
-                fill="rgba(15,23,42,0.6)" />
-            <path d="M0,60 C320,20 640,90 960,40 C1120,20 1320,60 1440,50 L1440,100 L0,100 Z"
-                fill="rgba(15,23,42,0.8)" />
-            <path d="M0,75 C240,60 480,90 720,70 C960,50 1200,80 1440,65 L1440,100 L0,100 Z" fill="#0F172A" />
-        </svg>
+    <div
+      class="wave-divider"
+      style="margin-top: -2px; line-height: 0; overflow: hidden"
+    >
+      <svg
+        viewBox="0 0 1440 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        style="width: 100%; height: 60px; display: block"
+      >
+        <path
+          d="M0,40 C360,100 720,0 1080,60 C1260,80 1380,50 1440,40 L1440,100 L0,100 Z"
+          fill="rgba(15,23,42,0.6)"
+        />
+        <path
+          d="M0,60 C320,20 640,90 960,40 C1120,20 1320,60 1440,50 L1440,100 L0,100 Z"
+          fill="rgba(15,23,42,0.8)"
+        />
+        <path
+          d="M0,75 C240,60 480,90 720,70 C960,50 1200,80 1440,65 L1440,100 L0,100 Z"
+          fill="#0F172A"
+        />
+      </svg>
     </div>
 
     <!-- Reused Footer -->
     <footer class="footer-gradient pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 text-xl font-bold mb-4">
-                        <div
-                            class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center">
-                            <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
-                        </div>
-                        <span>Nemenin</span>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
-                        Platform pendampingan emosional dan sosial — ruang aman untuk didengar, ditemani, dan
-                        berinteraksi dengan batasan yang jelas, aman, dan beretika.
-                    </p>
-                    <div class="flex gap-3">
-                        <a href="#" class="social-icon" aria-label="Instagram">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Twitter">
-                            <i data-lucide="twitter" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <i data-lucide="linkedin" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#" class="social-icon" aria-label="Email">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Links -->
-                <div>
-                    <h4 class="font-bold text-sm mb-4 text-white">Platform</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="index.html#features" class="footer-link">Fitur</a></li>
-                        <li><a href="how-it-works.html" class="footer-link">Cara Kerja</a></li>
-                        <li><a href="index.html#pricing" class="footer-link">Harga</a></li>
-                        <li><a href="index.html#faq" class="footer-link">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-sm mb-4 text-white">Perusahaan</h4>
-                    <ul class="space-y-2.5">
-                        <li><a href="#" class="footer-link">Tentang Kami</a></li>
-                        <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
-                        <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
-                        <li><a href="#" class="footer-link">Hubungi Kami</a></li>
-                    </ul>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-12 mb-12">
+          <!-- Brand -->
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-2 text-xl font-bold mb-4">
+              <div
+                class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal to-peach flex items-center justify-center"
+              >
+                <i data-lucide="heart-handshake" class="w-5 h-5 text-white"></i>
+              </div>
+              <span>Nemenin</span>
             </div>
-
-            <!-- Divider -->
-            <div class="border-t border-navy-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-slate-500 text-xs">
-                    &copy; 2026 Nemenin. Semua hak dilindungi.
-                </p>
-                <p class="text-slate-600 text-xs">
-                    Dibuat dengan <i data-lucide="heart" class="w-3.5 h-3.5 inline text-peach"></i> untuk kemanusiaan
-                </p>
+            <p class="text-slate-400 text-sm leading-relaxed max-w-md mb-6">
+              Platform pendampingan emosional dan sosial — ruang aman untuk
+              didengar, ditemani, dan berinteraksi dengan batasan yang jelas,
+              aman, dan beretika.
+            </p>
+            <div class="flex gap-3">
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Email">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- Links -->
+          <div>
+            <h4 class="font-bold text-sm mb-4 text-white">Platform</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a href="index.html#features" class="footer-link">Fitur</a>
+              </li>
+              <li>
+                <a href="how-it-works.html" class="footer-link">Cara Kerja</a>
+              </li>
+              <li>
+                <a href="index.html#pricing" class="footer-link">Harga</a>
+              </li>
+              <li><a href="index.html#faq" class="footer-link">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold text-sm mb-4 text-white">Perusahaan</h4>
+            <ul class="space-y-2.5">
+              <li><a href="#" class="footer-link">Tentang Kami</a></li>
+              <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+              <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+              <li><a href="#" class="footer-link">Hubungi Kami</a></li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Divider -->
+        <div
+          class="border-t border-navy-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <p class="text-slate-500 text-xs">
+            &copy; 2026 Nemenin. Semua hak dilindungi.
+          </p>
+          <p class="text-slate-600 text-xs">
+            Dibuat dengan
+            <i data-lucide="heart" class="w-3.5 h-3.5 inline text-peach"></i>
+            untuk kemanusiaan
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>lucide.createIcons();</script>
+    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
-</body>
-
+    <script>
+      lucide.createIcons();
+      // Initialize Lenis smooth scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    </script>
+  </body>
 </html>
