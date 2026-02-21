@@ -96,4 +96,72 @@ document.addEventListener('DOMContentLoaded', () => {
 
     counters.forEach(c => counterObserver.observe(c));
 
+    // ---------- Typewriter effect ----------
+    const typewriterEl = document.getElementById('typewriter-text');
+    if (typewriterEl) {
+        const phrases = ['merasa ditemani', 'didengarkan', 'berbagi cerita', 'tidak sendirian'];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typewrite() {
+            const current = phrases[phraseIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let delay = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === current.length) {
+                delay = 2000; // pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                delay = 400;
+            }
+
+            setTimeout(typewrite, delay);
+        }
+
+        typewrite();
+    }
+
+    // ---------- Shield checklist scroll animation ----------
+    const shieldList = document.getElementById('shield-list');
+    if (shieldList) {
+        const shieldObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = shieldList.querySelectorAll('.shield-item');
+                    items.forEach((item, index) => {
+                        const delay = parseInt(item.getAttribute('data-delay') || 0);
+                        setTimeout(() => item.classList.add('visible'), delay);
+                    });
+                    shieldObserver.unobserve(shieldList);
+                }
+            });
+        }, { threshold: 0.3 });
+        shieldObserver.observe(shieldList);
+    }
+    // ---------- Chat bubble animation on scroll ----------
+    const chatDemo = document.getElementById('chat-demo');
+    if (chatDemo) {
+        const chatObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    chatDemo.querySelectorAll('.chat-bubble, .typing-indicator').forEach(el => {
+                        el.classList.add('animate');
+                    });
+                    chatObserver.unobserve(chatDemo);
+                }
+            });
+        }, { threshold: 0.3 });
+        chatObserver.observe(chatDemo);
+    }
+
 });

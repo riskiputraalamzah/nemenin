@@ -16,9 +16,10 @@
                 extend: {
                     fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
                     colors: {
-                        teal: { DEFAULT: '#0D9488', light: '#14B8A6', dark: '#0F766E' },
-                        peach: { DEFAULT: '#FB923C', light: '#FDBA74', dark: '#EA580C' },
+                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
+                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
                         navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
+                        warm: { orange: '#E8833A', yellow: '#F5C542', blue: '#F2A68B', sky: '#89C4F4' },
                     }
                 }
             }
@@ -56,7 +57,7 @@
                 <div
                     class="hidden md:flex items-center gap-1 bg-white/[0.04] border border-white/[0.06] rounded-full px-1.5 py-1">
                     <a href="#hero" class="nav-link-pill">Beranda</a>
-                    <a href="#why" class="nav-link-pill">Mengapa?</a>
+                    <a href="#features" class="nav-link-pill">Fitur</a>
                     <a href="#how" class="nav-link-pill">Cara Kerja</a>
                     <a href="#pricing" class="nav-link-pill">Harga</a>
                 </div>
@@ -100,9 +101,9 @@
                 <i data-lucide="home" class="w-5 h-5 text-teal-light"></i>
                 Beranda
             </a>
-            <a href="#why" class="mobile-nav-link">
-                <i data-lucide="shield-check" class="w-5 h-5 text-teal-light"></i>
-                Mengapa Nemenin?
+            <a href="#features" class="mobile-nav-link">
+                <i data-lucide="sparkles" class="w-5 h-5 text-teal-light"></i>
+                Fitur
             </a>
             <a href="#how" class="mobile-nav-link">
                 <i data-lucide="route" class="w-5 h-5 text-teal-light"></i>
@@ -127,15 +128,16 @@
     </div>
 
     <!-- ============================================================
-       HERO SECTION
+       HERO SECTION — Interactive floating profile cards
        ============================================================ -->
     <section id="hero" class="hero-gradient relative min-h-screen flex items-center overflow-hidden pt-20">
-        <!-- Blobs -->
-        <div class="hero-blob w-96 h-96 bg-teal/20 -top-20 -left-20 absolute"></div>
-        <div class="hero-blob w-72 h-72 bg-peach/15 bottom-10 right-10 absolute" style="animation-delay: -4s;"></div>
+        <!-- Organic Warm Blobs -->
+        <div class="warm-blob w-[500px] h-[500px] bg-teal/20 -top-40 -left-40 absolute"></div>
+        <div class="warm-blob w-[400px] h-[400px] bg-peach/15 bottom-0 right-0 absolute"></div>
+        <div class="warm-blob w-[300px] h-[300px] bg-teal-light/10 top-1/2 left-1/2 absolute"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                 <!-- Left Content -->
                 <div class="relative z-10" style="animation: fadeInLeft 1s ease-out;">
                     <div class="section-tag">
@@ -143,21 +145,22 @@
                         Platform Pendampingan #1 di Indonesia
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                        Ruang aman untuk <span class="text-gradient">merasa ditemani</span>
+                        Ruang aman untuk <br>
+                        <span class="text-gradient" id="typewriter-text"></span><span class="typewriter-cursor"></span>
                     </h1>
                     <p class="text-lg text-slate-400 max-w-xl mb-8 leading-relaxed">
                         Bukan aplikasi kencan, bukan konseling medis. <strong class="text-slate-200">Nemenin</strong>
-                        menjembatani
-                        kebutuhan akan teman bicara yang profesional dan berempati — baik secara online maupun offline.
+                        menjembatani kebutuhan akan teman bicara yang profesional dan berempati.
                     </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#how" class="btn-primary">
-                            <i data-lucide="search" class="w-4 h-4"></i>
-                            Cari Teman Cerita
+                    <div class="flex gap-2 sm:gap-4">
+                        <a href="register.html"
+                            class="btn-primary text-sm sm:text-base py-3 px-4 sm:px-6 whitespace-nowrap">
+                            <i data-lucide="heart" class="w-4 h-4"></i>
+                            Buat Profil
                         </a>
-                        <a href="#why" class="btn-secondary">
-                            <i data-lucide="info" class="w-4 h-4"></i>
-                            Pelajari Lebih Lanjut
+                        <a href="login.html"
+                            class="btn-secondary text-sm sm:text-base py-3 px-4 sm:px-6 whitespace-nowrap">
+                            Masuk
                         </a>
                     </div>
                     <!-- Mini Trust Badges -->
@@ -172,95 +175,58 @@
                         </div>
                         <div class="flex items-center gap-2">
                             <i data-lucide="users" class="w-4 h-4 text-teal-light"></i>
-                            <span><span data-count="2500">0</span>+ Pengguna</span>
+                            <span><span data-count="2500" class="counter-number">0</span>+ Pengguna</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Illustration -->
+                <!-- Right — Floating Profile Cards -->
                 <div class="relative flex justify-center items-center"
                     style="animation: fadeInRight 1s ease-out 0.3s both;">
-                    <!-- Abstract Illustration using SVG -->
-                    <div class="hero-image relative">
-                        <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg"
-                            class="w-full max-w-[280px] sm:max-w-sm lg:max-w-lg">
-                            <!-- Main circle blob -->
-                            <circle cx="250" cy="250" r="200" fill="url(#grad1)" opacity="0.15"
-                                style="animation: blob 10s ease-in-out infinite;" />
-                            <circle cx="250" cy="250" r="150" fill="url(#grad2)" opacity="0.2"
-                                style="animation: blob 8s ease-in-out infinite reverse;" />
-
-                            <!-- Person 1 silhouette -->
-                            <g transform="translate(120, 140)">
-                                <circle cx="40" cy="30" r="28" fill="#14B8A6" opacity="0.9" />
-                                <ellipse cx="40" cy="95" rx="38" ry="50" fill="#14B8A6" opacity="0.7" />
-                                <!-- Face -->
-                                <circle cx="32" cy="26" r="3" fill="#0F172A" />
-                                <circle cx="48" cy="26" r="3" fill="#0F172A" />
-                                <path d="M34 36 Q40 42 46 36" stroke="#0F172A" stroke-width="2" fill="none"
-                                    stroke-linecap="round" />
-                            </g>
-
-                            <!-- Person 2 silhouette -->
-                            <g transform="translate(260, 140)">
-                                <circle cx="40" cy="30" r="28" fill="#FB923C" opacity="0.9" />
-                                <ellipse cx="40" cy="95" rx="38" ry="50" fill="#FB923C" opacity="0.7" />
-                                <!-- Face -->
-                                <circle cx="32" cy="26" r="3" fill="#0F172A" />
-                                <circle cx="48" cy="26" r="3" fill="#0F172A" />
-                                <path d="M34 36 Q40 42 46 36" stroke="#0F172A" stroke-width="2" fill="none"
-                                    stroke-linecap="round" />
-                            </g>
-
-                            <!-- Connection line / heart between them -->
-                            <g transform="translate(210, 160)">
-                                <path
-                                    d="M40 25 C40 10, 55 0, 55 15 C55 30, 40 40, 40 40 C40 40, 25 30, 25 15 C25 0, 40 10, 40 25Z"
-                                    fill="#FDBA74" opacity="0.8" />
-                            </g>
-
-                            <!-- Chat bubbles -->
-                            <g transform="translate(90, 100)">
-                                <rect x="0" y="0" width="60" height="30" rx="15" fill="#1E293B" stroke="#334155"
-                                    stroke-width="1" />
-                                <circle cx="15" cy="15" r="3" fill="#14B8A6" />
-                                <circle cx="28" cy="15" r="3" fill="#14B8A6" opacity="0.8" />
-                                <circle cx="41" cy="15" r="3" fill="#14B8A6" opacity="0.5" />
-                            </g>
-
-                            <g transform="translate(310, 100)">
-                                <rect x="0" y="0" width="60" height="30" rx="15" fill="#1E293B" stroke="#334155"
-                                    stroke-width="1" />
-                                <circle cx="15" cy="15" r="3" fill="#FB923C" />
-                                <circle cx="28" cy="15" r="3" fill="#FB923C" opacity="0.8" />
-                                <circle cx="41" cy="15" r="3" fill="#FB923C" opacity="0.5" />
-                            </g>
-
-                            <!-- Shield -->
-                            <g transform="translate(218, 300)">
-                                <path d="M30 5 L55 15 L55 40 C55 60 30 70 30 70 C30 70 5 60 5 40 L5 15 Z" fill="#0D9488"
-                                    opacity="0.3" />
-                                <path d="M22 38 L28 44 L40 30" stroke="#14B8A6" stroke-width="3" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </g>
-
-                            <!-- Decorative dots -->
-                            <circle cx="80" cy="350" r="4" fill="#14B8A6" opacity="0.4" />
-                            <circle cx="420" cy="100" r="3" fill="#FB923C" opacity="0.5" />
-                            <circle cx="400" cy="380" r="5" fill="#14B8A6" opacity="0.3" />
-                            <circle cx="100" cy="80" r="3" fill="#FDBA74" opacity="0.4" />
-
-                            <defs>
-                                <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
-                                    <stop offset="0%" stop-color="#14B8A6" />
-                                    <stop offset="100%" stop-color="#0F172A" />
-                                </radialGradient>
-                                <radialGradient id="grad2" cx="50%" cy="50%" r="50%">
-                                    <stop offset="0%" stop-color="#FB923C" />
-                                    <stop offset="100%" stop-color="#0F172A" />
-                                </radialGradient>
-                            </defs>
-                        </svg>
+                    <div class="floating-cards-container">
+                        <!-- Card 1 -->
+                        <div class="floating-card float-card-1">
+                            <div class="avatar bg-teal/20">👩</div>
+                            <div class="card-info">
+                                <h4>Rina Kartika</h4>
+                                <p>Pendamping · Online</p>
+                            </div>
+                            <div class="card-rating">⭐ 4.9</div>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="floating-card float-card-2">
+                            <div class="avatar bg-peach/20">👨</div>
+                            <div class="card-info">
+                                <h4>Adi Nugroho</h4>
+                                <p>Pendamping · Offline</p>
+                            </div>
+                            <div class="card-rating">⭐ 4.8</div>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="floating-card float-card-3">
+                            <div class="avatar bg-peach-light/20">👩‍🦱</div>
+                            <div class="card-info">
+                                <h4>Maya Sari</h4>
+                                <p>Pendamping · Online</p>
+                            </div>
+                            <div class="card-rating">⭐ 5.0</div>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="floating-card float-card-4">
+                            <div class="avatar bg-teal-light/20">🧑</div>
+                            <div class="card-info">
+                                <h4>Budi Santoso</h4>
+                                <p>Pendamping · Online</p>
+                            </div>
+                            <div class="card-rating">⭐ 4.7</div>
+                        </div>
+                        <!-- Decorative Dots -->
+                        <div class="absolute w-3 h-3 rounded-full bg-teal/40 top-[20%] left-[45%] animate-pulse">
+                        </div>
+                        <div class="absolute w-2 h-2 rounded-full bg-peach/50 bottom-[25%] right-[30%] animate-pulse"
+                            style="animation-delay:1s;"></div>
+                        <div class="absolute w-4 h-4 rounded-full bg-peach-light/30 top-[60%] left-[40%] animate-pulse"
+                            style="animation-delay:2s;"></div>
                     </div>
                 </div>
             </div>
@@ -268,85 +234,222 @@
     </section>
 
     <!-- ============================================================
-       WHY NEMENIN? — VALUE PROPOSITION
+       FEATURE 1 — Temukan Teman Cerita
        ============================================================ -->
-    <section id="why" class="py-24 relative">
+    <section id="features" class="feature-showcase reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Heading -->
-            <div class="text-center mb-16 reveal">
-                <div class="section-tag mx-auto w-fit">
-                    <i data-lucide="star" class="w-3.5 h-3.5"></i>
-                    Nilai Kami
-                </div>
-                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    Mengapa <span class="text-gradient">Nemenin</span>?
-                </h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">
-                    Kami percaya setiap orang berhak memiliki tempat yang aman untuk berbicara dan merasa ditemani tanpa
-                    penghakiman.
-                </p>
-            </div>
-
-            <!-- Value Cards -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="glass-card p-6 reveal reveal-delay-1">
-                    <div class="value-icon-wrap bg-teal/10 text-teal-light">
-                        <i data-lucide="shield-check" class="w-7 h-7"></i>
+            <div class="feature-grid">
+                <!-- Text -->
+                <div>
+                    <div class="feature-tag">
+                        <i data-lucide="search" class="w-3.5 h-3.5"></i>
+                        Fitur Utama
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Aman & Beretika</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Setiap pendamping terverifikasi melalui proses ketat. Data pribadimu dijaga dengan standar
-                        keamanan tertinggi.
+                    <h2 class="feature-title">Temukan teman cerita yang <span class="text-gradient">tepat
+                            untukmu</span></h2>
+                    <p class="feature-desc">
+                        Jelajahi profil pendamping terverifikasi. Lihat bio, keahlian, rating, dan ketersediaan mereka.
+                        Cari berdasarkan topik, lokasi, atau jadwal — semuanya disesuaikan dengan kebutuhanmu.
                     </p>
+                    <a href="register.html" class="feature-cta">
+                        Mulai Cari
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
-
-                <!-- Card 2 -->
-                <div class="glass-card p-6 reveal reveal-delay-2">
-                    <div class="value-icon-wrap bg-peach/10 text-peach">
-                        <i data-lucide="heart" class="w-7 h-7"></i>
+                <!-- Visual — Mini profile card stack -->
+                <div class="feature-visual flex items-center justify-center">
+                    <div class="space-y-3 w-full max-w-xs">
+                        <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-1"
+                            style="transform: rotate(-1deg);">
+                            <div
+                                class="w-12 h-12 rounded-full bg-teal/15 flex items-center justify-center text-xl shrink-0">
+                                👩‍⚕️</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-bold text-sm">Dr. Anisa</div>
+                                <div class="text-xs text-slate-400">Psikologi · ⭐ 4.9</div>
+                            </div>
+                            <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
+                        </div>
+                        <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-2"
+                            style="transform: rotate(0.5deg);">
+                            <div
+                                class="w-12 h-12 rounded-full bg-peach/15 flex items-center justify-center text-xl shrink-0">
+                                🧑‍🏫</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-bold text-sm">Kak Dimas</div>
+                                <div class="text-xs text-slate-400">Life Coach · ⭐ 4.8</div>
+                            </div>
+                            <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
+                        </div>
+                        <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-3"
+                            style="transform: rotate(-0.5deg);">
+                            <div
+                                class="w-12 h-12 rounded-full bg-peach-light/15 flex items-center justify-center text-xl shrink-0">
+                                👨‍💼</div>
+                            <div class="flex-1 min-w-0">
+                                <div class="font-bold text-sm">Mas Rizky</div>
+                                <div class="text-xs text-slate-400">Mentor · ⭐ 4.7</div>
+                            </div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-400 shrink-0"></div>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Manusiawi</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Bukan chatbot. Kamu bicara dengan manusia sungguhan yang terlatih untuk mendengarkan dengan
-                        empati.
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="glass-card p-6 reveal reveal-delay-3">
-                    <div class="value-icon-wrap bg-teal/10 text-teal-light">
-                        <i data-lucide="clock" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Fleksibel</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Pilih sesi online atau offline, sesuaikan jadwal dengan waktu dan kebutuhanmu. Kapan saja, di
-                        mana saja.
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="glass-card p-6 reveal reveal-delay-4">
-                    <div class="value-icon-wrap bg-peach/10 text-peach">
-                        <i data-lucide="users" class="w-7 h-7"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Inklusif</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Untuk semua kalangan. Tidak ada diskriminasi — setiap orang berhak merasa ditemani dan didengar.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-       HOW IT WORKS — ROLES
+       FEATURE 2 — Didengarkan dengan Empati (reversed)
+       ============================================================ -->
+    <section class="feature-showcase reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="feature-grid reversed">
+                <!-- Text -->
+                <div>
+                    <div class="feature-tag">
+                        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                        Pengalaman Chat
+                    </div>
+                    <h2 class="feature-title">Didengarkan dengan <span class="text-gradient">empati</span></h2>
+                    <p class="feature-desc">
+                        Bukan chatbot. Kamu bicara dengan manusia sungguhan yang terlatih untuk mendengarkan tanpa
+                        menghakimi.
+                        Cerita apa saja — beban pikiran, kesepian, atau sekadar butuh teman bicara.
+                    </p>
+                    <a href="register.html" class="feature-cta">
+                        Mulai Cerita
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <!-- Visual — Chat demo -->
+                <div class="feature-visual flex items-center justify-center">
+                    <div class="chat-demo" id="chat-demo">
+                        <div class="chat-bubble left">Hai, aku lagi merasa overwhelmed akhir-akhir ini... 😞</div>
+                        <div class="chat-bubble right">Hai! Terima kasih sudah mau cerita. Aku di sini untuk
+                            mendengarkan 💛</div>
+                        <div class="chat-bubble left">Rasanya kayak nggak ada yang ngerti...</div>
+                        <div class="chat-bubble right">Perasaanmu valid. Yuk, kita ngobrol pelan-pelan ya ☺️</div>
+                        <div class="typing-indicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FEATURE 3 — Privasi & Keamanan
+       ============================================================ -->
+    <section class="feature-showcase reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="feature-grid">
+                <!-- Text -->
+                <div>
+                    <div class="feature-tag">
+                        <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                        Keamanan
+                    </div>
+                    <h2 class="feature-title">Privasi & keamananmu <span class="text-gradient">terjaga</span></h2>
+                    <p class="feature-desc">
+                        Kalau kamu menghargai privasi, tenang saja. Data pribadimu terenkripsi, percakapan bersifat
+                        rahasia,
+                        dan kamu punya kendali penuh atas informasi yang dibagikan.
+                    </p>
+                    <a href="register.html" class="feature-cta">
+                        Pelajari Keamanan
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <!-- Visual — Shield checklist -->
+                <div class="feature-visual flex items-center justify-center">
+                    <div class="shield-container" id="shield-list">
+                        <div class="shield-item" data-delay="0">
+                            <div class="check-circle"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span>Enkripsi end-to-end</span>
+                        </div>
+                        <div class="shield-item" data-delay="200">
+                            <div class="check-circle"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span>Verifikasi KTP terenkripsi</span>
+                        </div>
+                        <div class="shield-item" data-delay="400">
+                            <div class="check-circle"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span>Kontrol privasi penuh</span>
+                        </div>
+                        <div class="shield-item" data-delay="600">
+                            <div class="check-circle"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span>Anti-spam & moderasi</span>
+                        </div>
+                        <div class="shield-item" data-delay="800">
+                            <div class="check-circle"><i data-lucide="check" class="w-4 h-4"></i></div>
+                            <span>Hak hapus data kapan saja</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FEATURE 4 — Pendamping Terverifikasi (reversed)
+       ============================================================ -->
+    <section class="feature-showcase reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="feature-grid reversed">
+                <!-- Text -->
+                <div>
+                    <div class="feature-tag">
+                        <i data-lucide="badge-check" class="w-3.5 h-3.5"></i>
+                        Terverifikasi
+                    </div>
+                    <h2 class="feature-title">Temui <span class="text-gradient">orang asli</span></h2>
+                    <p class="feature-desc">
+                        Setiap pendamping melewati proses verifikasi identitas, background check, dan pelatihan empati.
+                        Kamu hanya bertemu orang-orang yang benar-benar siap mendengarkan.
+                    </p>
+                    <a href="register.html" class="feature-cta">
+                        Lihat Pendamping
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                <!-- Visual — Verified badge card -->
+                <div class="feature-visual flex items-center justify-center">
+                    <div class="glass-card p-8 max-w-xs text-center reveal">
+                        <div
+                            class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-teal/20 to-peach/20 flex items-center justify-center text-5xl mb-4 relative">
+                            👩‍⚕️
+                            <div
+                                class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center shadow-lg">
+                                <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                            </div>
+                        </div>
+                        <h4 class="font-bold text-lg mb-1">Dr. Anisa Putri</h4>
+                        <p class="text-slate-400 text-sm mb-3">Psikolog Klinis · 3 tahun pengalaman</p>
+                        <div class="flex items-center justify-center gap-1 text-peach text-sm font-semibold mb-4">
+                            ⭐⭐⭐⭐⭐ <span class="text-slate-400 font-normal ml-1">(128 ulasan)</span>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span
+                                class="text-xs px-2.5 py-1 rounded-full bg-teal/10 text-teal-light border border-teal/15">🛡️
+                                Terverifikasi</span>
+                            <span
+                                class="text-xs px-2.5 py-1 rounded-full bg-peach/10 text-peach border border-peach/15">💚
+                                Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       HOW IT WORKS — 3-Step Visual Flow
        ============================================================ -->
     <section id="how" class="py-24 relative">
-        <!-- Subtle bg gradient -->
         <div class="absolute inset-0 bg-gradient-to-b from-navy via-navy-light/30 to-navy pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Heading -->
             <div class="text-center mb-16 reveal">
                 <div class="section-tag mx-auto w-fit">
@@ -354,132 +457,41 @@
                     Cara Kerja
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    Dua Peran, Satu <span class="text-gradient">Tujuan</span>
+                    Mulai dalam <span class="text-gradient">3 langkah</span> mudah
                 </h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
-                    Nemenin menghubungkan dua peran utama untuk menciptakan ruang aman yang penuh empati.
+                    Tidak perlu ribet. Buat akun, temukan pendamping, dan mulai cerita.
                 </p>
             </div>
 
-            <!-- Two-Column Roles -->
-            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
-                <!-- Pengguna -->
-                <div class="glass-card p-8 reveal-left">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-peach to-peach-dark flex items-center justify-center">
-                            <i data-lucide="user" class="w-7 h-7 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">Pengguna</h3>
-                            <p class="text-slate-400 text-sm">Mencari teman bicara atau pendamping</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-peach/10 flex items-center justify-center text-peach font-bold text-sm">
-                                1</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Daftar & Verifikasi</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Buat akun dan lengkapi profil. Data KTP kamu
-                                    terenkripsi dan aman.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-peach/10 flex items-center justify-center text-peach font-bold text-sm">
-                                2</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Cari Pendamping</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Jelajahi profil pendamping. Lihat bio, rating,
-                                    dan ketersediaan mereka.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-peach/10 flex items-center justify-center text-peach font-bold text-sm">
-                                3</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Mulai Sesi</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Pilih online chat atau offline meetup.
-                                    Jadwalkan sesuai waktumu.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-peach/10 flex items-center justify-center text-peach font-bold text-sm">
-                                4</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Merasa Ditemani</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Nikmati percakapan yang hangat, aman, dan tanpa
-                                    penghakiman.</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- 3-Step Flow -->
+            <div class="steps-flow reveal">
+                <!-- Step 1 -->
+                <div class="step-item">
+                    <div class="step-icon-wrap">📝</div>
+                    <div class="step-connector"></div>
+                    <h3 class="step-title">Buat Profil</h3>
+                    <p class="step-desc">Daftar gratis dan lengkapi profil. Data KTP terenkripsi dan aman.</p>
                 </div>
-
-                <!-- Pendamping -->
-                <div class="glass-card p-8 reveal-right">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center">
-                            <i data-lucide="hand-helping" class="w-7 h-7 text-white"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold">Pendamping</h3>
-                            <p class="text-slate-400 text-sm">Individu terverifikasi siap mendengarkan</p>
-                        </div>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-teal/10 flex items-center justify-center text-teal-light font-bold text-sm">
-                                1</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Daftar sebagai Pendamping</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Kirim aplikasi dengan verifikasi identitas dan
-                                    latar belakang.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-teal/10 flex items-center justify-center text-teal-light font-bold text-sm">
-                                2</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Proses Verifikasi</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Tim kami meninjau profil dan memastikan
-                                    kualitas pendampingan.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-teal/10 flex items-center justify-center text-teal-light font-bold text-sm">
-                                3</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Atur Ketersediaan</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Tentukan jadwal dan jenis sesi yang kamu
-                                    tawarkan (online/offline).</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div
-                                class="w-8 h-8 shrink-0 rounded-lg bg-teal/10 flex items-center justify-center text-teal-light font-bold text-sm">
-                                4</div>
-                            <div>
-                                <h4 class="font-semibold text-sm">Dampingi & Dapatkan Penghasilan</h4>
-                                <p class="text-slate-400 text-xs mt-0.5">Terima sesi, temani pengguna, dan dapatkan
-                                    kompensasi yang layak.</p>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Step 2 -->
+                <div class="step-item">
+                    <div class="step-icon-wrap">🔍</div>
+                    <div class="step-connector"></div>
+                    <h3 class="step-title">Temukan Pendamping</h3>
+                    <p class="step-desc">Jelajahi profil pendamping terverifikasi sesuai kebutuhanmu.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="step-item">
+                    <div class="step-icon-wrap">💬</div>
+                    <h3 class="step-title">Mulai Sesi</h3>
+                    <p class="step-desc">Chat online atau offline meetup. Jadwalkan sesuai waktumu.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
-       PRICING / TIERS
+       PRICING / TIERS — Enhanced with tilt & shine
        ============================================================ -->
     <section id="pricing" class="py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -490,7 +502,7 @@
                     Paket Harga
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-                    Pilih Paket yang <span class="text-gradient">Tepat</span>
+                    Pilih paket yang <span class="text-gradient">tepat</span>
                 </h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
                     Mulai gratis, upgrade kapan saja untuk pengalaman terbaik.
@@ -500,7 +512,7 @@
             <!-- Pricing Cards -->
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Reguler -->
-                <div class="glass-card pricing-card p-8 reveal reveal-delay-1">
+                <div class="glass-card pricing-card-enhanced p-8 reveal reveal-delay-1">
                     <h3 class="text-xl font-bold mb-1">Akun Reguler</h3>
                     <p class="text-slate-400 text-sm mb-6">Untuk kamu yang ingin mencoba</p>
                     <div class="mb-8">
@@ -509,7 +521,7 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-300">Visibilitas terbatas pada katalog pendamping</span>
+                            <span class="text-slate-300">Visibilitas terbatas pada katalog</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
@@ -527,10 +539,6 @@
                             <i data-lucide="x" class="w-4 h-4 cross-icon shrink-0 mt-0.5"></i>
                             <span class="text-slate-500">Komunikasi langsung via WA</span>
                         </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i data-lucide="x" class="w-4 h-4 cross-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-500">Update event & couple matching</span>
-                        </li>
                     </ul>
                     <a href="register.html" class="btn-secondary w-full justify-center text-sm">
                         Daftar Gratis
@@ -538,7 +546,7 @@
                 </div>
 
                 <!-- Premium -->
-                <div class="glass-card pricing-card featured p-8 reveal reveal-delay-2">
+                <div class="glass-card pricing-card-enhanced featured p-8 reveal reveal-delay-2">
                     <div class="pricing-badge">Populer</div>
                     <h3 class="text-xl font-bold mb-1">Akun Premium</h3>
                     <p class="text-slate-400 text-sm mb-6">Pengalaman terbaik di Nemenin</p>
@@ -549,19 +557,11 @@
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-300">Visibilitas unlimited di katalog pendamping</span>
+                            <span class="text-slate-300">Visibilitas unlimited di katalog</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-300">Konsultasi online gratis</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-300 font-semibold">Konsultasi offline GRATIS</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm">
-                            <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
-                            <span class="text-slate-300">Masa aktif 6 bulan</span>
+                            <span class="text-slate-300">Konsultasi online & offline gratis</span>
                         </li>
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
@@ -570,6 +570,10 @@
                         <li class="flex items-start gap-3 text-sm">
                             <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
                             <span class="text-slate-300">Update event & couple matching</span>
+                        </li>
+                        <li class="flex items-start gap-3 text-sm">
+                            <i data-lucide="check" class="w-4 h-4 check-icon shrink-0 mt-0.5"></i>
+                            <span class="text-slate-300">Masa aktif 6 bulan</span>
                         </li>
                     </ul>
                     <a href="register.html" class="btn-primary w-full justify-center text-sm">
@@ -587,6 +591,12 @@
     <section class="py-20 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-teal-dark/20 via-navy to-peach-dark/20 pointer-events-none">
         </div>
+        <!-- Floating dots -->
+        <div class="absolute w-3 h-3 rounded-full bg-teal/30 top-[20%] left-[10%] animate-pulse"></div>
+        <div class="absolute w-2 h-2 rounded-full bg-peach/40 top-[40%] right-[15%] animate-pulse"
+            style="animation-delay:1s;"></div>
+        <div class="absolute w-4 h-4 rounded-full bg-teal-light/20 bottom-[30%] left-[20%] animate-pulse"
+            style="animation-delay:2s;"></div>
         <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
             <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                 Siap memulai perjalananmu?
@@ -645,7 +655,7 @@
                 <div>
                     <h4 class="font-bold text-sm mb-4 text-white">Platform</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="#why" class="footer-link">Mengapa Nemenin?</a></li>
+                        <li><a href="#features" class="footer-link">Fitur</a></li>
                         <li><a href="#how" class="footer-link">Cara Kerja</a></li>
                         <li><a href="#pricing" class="footer-link">Harga</a></li>
                         <li><a href="#" class="footer-link">FAQ</a></li>

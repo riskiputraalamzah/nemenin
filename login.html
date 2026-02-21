@@ -14,8 +14,8 @@
                 extend: {
                     fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
                     colors: {
-                        teal: { DEFAULT: '#0D9488', light: '#14B8A6', dark: '#0F766E' },
-                        peach: { DEFAULT: '#FB923C', light: '#FDBA74', dark: '#EA580C' },
+                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
+                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
                         navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
                     }
                 }
@@ -152,7 +152,7 @@
             e.preventDefault();
             const toast = document.createElement('div');
             toast.innerHTML = '✅ Berhasil masuk! Mengarahkan...';
-            toast.style.cssText = `position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,#0D9488,#14B8A6);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;`;
+            toast.style.cssText = `position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,#E07A5F,#F2A68B);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;`;
             document.body.appendChild(toast);
             setTimeout(() => window.location.href = 'dashboard.html', 1500);
         }

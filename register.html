@@ -13,8 +13,8 @@
                 extend: {
                     fontFamily: { jakarta: ['"Plus Jakarta Sans"', 'sans-serif'] },
                     colors: {
-                        teal: { DEFAULT: '#0D9488', light: '#14B8A6', dark: '#0F766E' },
-                        peach: { DEFAULT: '#FB923C', light: '#FDBA74', dark: '#EA580C' },
+                        teal: { DEFAULT: '#E07A5F', light: '#F2A68B', dark: '#C1574A' },
+                        peach: { DEFAULT: '#F2CC8F', light: '#F7DBA7', dark: '#D4A55A' },
                         navy: { DEFAULT: '#0F172A', light: '#1E293B', card: '#1E293B', border: '#334155' },
                     }
                 }
@@ -52,12 +52,12 @@
         }
 
         .progress-dot.filled {
-            background: linear-gradient(90deg, #0D9488, #14B8A6);
+            background: linear-gradient(90deg, #E07A5F, #F2A68B);
         }
 
         .progress-dot.current {
-            background: linear-gradient(90deg, #14B8A6, #FDBA74);
-            box-shadow: 0 0 12px rgba(20, 184, 166, 0.4);
+            background: linear-gradient(90deg, #F2A68B, #F7DBA7);
+            box-shadow: 0 0 12px rgba(242, 166, 139, 0.4);
         }
 
         .step {
@@ -99,15 +99,15 @@
         }
 
         .choice-btn:hover {
-            border-color: rgba(20, 184, 166, 0.4);
-            background: rgba(13, 148, 136, 0.08);
+            border-color: rgba(242, 166, 139, 0.4);
+            background: rgba(224, 122, 95, 0.08);
             transform: translateY(-2px);
         }
 
         .choice-btn.selected {
-            border-color: #14B8A6;
-            background: rgba(13, 148, 136, 0.12);
-            box-shadow: 0 0 20px rgba(13, 148, 136, 0.15);
+            border-color: #F2A68B;
+            background: rgba(224, 122, 95, 0.12);
+            box-shadow: 0 0 20px rgba(224, 122, 95, 0.15);
         }
 
         .choice-icon {
@@ -169,14 +169,14 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, #0D9488, #14B8A6);
+            background: linear-gradient(135deg, #E07A5F, #F2A68B);
             color: #fff;
             margin-top: 1.5rem;
         }
 
         .next-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.4);
+            box-shadow: 0 8px 30px rgba(224, 122, 95, 0.4);
         }
 
         .next-btn:disabled {
@@ -196,7 +196,7 @@
         }
 
         .upload-area:hover {
-            border-color: rgba(20, 184, 166, 0.4);
+            border-color: rgba(242, 166, 139, 0.4);
         }
 
         @media (max-width: 480px) {
@@ -525,7 +525,7 @@
         function finishRegister() {
             const t = document.createElement('div');
             t.innerHTML = '✅ Profil berhasil dibuat! Mengarahkan ke dashboard...';
-            t.style.cssText = `position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#0D9488,#14B8A6);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;white-space:nowrap;`;
+            t.style.cssText = `position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#E07A5F,#F2A68B);color:#fff;padding:1rem 1.5rem;border-radius:0.75rem;font-weight:600;font-family:'Plus Jakarta Sans',sans-serif;z-index:9999;box-shadow:0 8px 32px rgba(0,0,0,0.3);animation:fadeInUp 0.4s ease;white-space:nowrap;`;
             document.body.appendChild(t);
             setTimeout(() => window.location.href = 'dashboard.html', 2000);
         }

@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             toast.textContent = '✅ Profil berhasil disimpan!';
             toast.style.cssText = `
         position: fixed; bottom: 2rem; right: 2rem;
-        background: linear-gradient(135deg, #0D9488, #14B8A6);
+        background: linear-gradient(135deg, #E07A5F, #F2A68B);
         color: #fff; padding: 1rem 1.5rem;
         border-radius: 0.75rem; font-weight: 600;
         font-family: 'Plus Jakarta Sans', sans-serif;
