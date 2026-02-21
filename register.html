@@ -135,9 +135,6 @@
         }
 
         .back-btn {
-            position: absolute;
-            top: 1.75rem;
-            left: 1.75rem;
             width: 36px;
             height: 36px;
             border-radius: 50%;
@@ -145,10 +142,12 @@
             border: 1px solid rgba(148, 163, 184, 0.15);
             color: #94A3B8;
             cursor: pointer;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
         }
 
         .back-btn:hover {
