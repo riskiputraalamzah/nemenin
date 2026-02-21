@@ -5,6 +5,10 @@
 /* ---------- Google Font ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+html {
+    scroll-padding-top: 5rem;
+}
+
 /* ---------- Root Variables ---------- */
 :root {
     --teal: #E07A5F;
@@ -242,9 +246,9 @@ body {
 }
 
 .glass-card:hover {
-    border-color: rgba(224, 122, 95, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(224, 122, 95, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(224, 122, 95, 0.06), inset 0 0 20px rgba(224, 122, 95, 0.03);
 }
 
 /* ---------- Navbar — Modern Floating Glass ---------- */
@@ -773,10 +777,12 @@ body {
 
 /* ---------- Utility ---------- */
 .text-gradient {
-    background: linear-gradient(135deg, var(--teal-light), var(--peach));
+    background: linear-gradient(135deg, var(--teal-light), var(--peach), var(--teal-light));
+    background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: gradient-shift 6s ease infinite;
 }
 
 .bg-gradient-teal {

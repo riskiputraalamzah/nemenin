@@ -272,3 +272,61 @@ function toggleFaq(btn) {
         faqItem.classList.add('active');
     }
 }
+
+// ---------- Cursor Glow (desktop only) ----------
+(function () {
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+    const glow = document.createElement('div');
+    glow.id = 'cursor-glow';
+    glow.style.cssText = `
+        position: fixed;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(224,122,95,0.07) 0%, rgba(224,122,95,0.03) 40%, transparent 70%);
+        pointer-events: none;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    `;
+    document.body.appendChild(glow);
+
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        glow.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        glow.style.opacity = '0';
+    });
+
+    function updateGlow() {
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+        requestAnimationFrame(updateGlow);
+    }
+    requestAnimationFrame(updateGlow);
+})();
+
+// ---------- Magnetic Buttons ----------
+document.querySelectorAll('.btn-primary, .nav-cta-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+        btn.style.transition = 'transform 0.15s ease';
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0, 0)';
+        btn.style.transition = 'transform 0.3s ease';
+    });
+});
