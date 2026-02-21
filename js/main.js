@@ -249,11 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formatNumber = (num, suffix) => {
       if (num >= 1000000)
         return (num / 1000000).toFixed(2).replace(".", ",") + " jt" + suffix;
-      if (num >= 1000)
-        return (
-          (num / 1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ".") + suffix
-        );
-      return num + suffix;
+      return num.toLocaleString("id-ID") + suffix;
     };
 
     const animateCounter = (el) => {
