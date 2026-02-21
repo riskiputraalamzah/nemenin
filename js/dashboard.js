@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tabTitles = {
         'beranda': 'Beranda',
-        'discovery': 'Cari Pendamping',
+        'discovery': 'Cari Counselor',
         'sessions': 'Sesi Saya',
         'upgrade': 'Upgrade Premium',
         'settings': 'Pengaturan'

@@ -164,4 +164,111 @@ document.addEventListener('DOMContentLoaded', () => {
         chatObserver.observe(chatDemo);
     }
 
+    // ---------- Parallax on scroll ----------
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    if (parallaxEls.length) {
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    parallaxEls.forEach(el => {
+                        const speed = parseFloat(el.dataset.parallax) || 0;
+                        el.style.transform = `translateY(${scrollY * speed}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
+
+    // ---------- Step items sequential reveal ----------
+    const stepsFlow = document.querySelector('.steps-flow');
+    if (stepsFlow) {
+        const stepsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const steps = stepsFlow.querySelectorAll('.step-item');
+                    steps.forEach((step, i) => {
+                        setTimeout(() => step.classList.add('visible'), i * 250);
+                    });
+                    stepsObserver.unobserve(stepsFlow);
+                }
+            });
+        }, { threshold: 0.2 });
+        stepsObserver.observe(stepsFlow);
+    }
+
+    // ---------- Pricing card 3D tilt ----------
+    document.querySelectorAll('.pricing-card-enhanced').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        });
+    });
+    // ---------- Counter animation ----------
+    const counterEls = document.querySelectorAll('.counter-number');
+    if (counterEls.length) {
+        const formatNumber = (num, suffix) => {
+            if (num >= 1000000) return (num / 1000000).toFixed(2).replace('.', ',') + ' jt' + suffix;
+            if (num >= 1000) return (num / 1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + suffix;
+            return num + suffix;
+        };
+
+        const animateCounter = (el) => {
+            const target = parseInt(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const duration = 2000;
+            const start = performance.now();
+
+            const step = (now) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                // easeOutQuart
+                const ease = 1 - Math.pow(1 - progress, 4);
+                const current = Math.floor(ease * target);
+                el.textContent = formatNumber(current, suffix);
+                if (progress < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counterEls.forEach(el => counterObserver.observe(el));
+    }
+
 });
+
+// ---------- FAQ Toggle (global) ----------
+function toggleFaq(btn) {
+    const faqItem = btn.closest('.faq-item');
+    const wasActive = faqItem.classList.contains('active');
+
+    // Close all siblings
+    document.querySelectorAll('.faq-item.active').forEach(item => {
+        item.classList.remove('active');
+    });
+
+    // Toggle clicked
+    if (!wasActive) {
+        faqItem.classList.add('active');
+    }
+}

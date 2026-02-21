@@ -272,7 +272,7 @@ body {
     background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(20px) saturate(1.4);
     -webkit-backdrop-filter: blur(20px) saturate(1.4);
-    border: 1px solid rgba(148, 163, 184, 0.08);
+    /* border: 1px solid rgba(148, 163, 184, 0.08); */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
@@ -493,30 +493,68 @@ body {
     overflow: hidden;
 }
 
-.pricing-card.featured {
+.pricing-card-enhanced {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-card-enhanced.featured {
     border-color: var(--teal);
 }
 
-.pricing-card.featured::before {
+.pricing-card-enhanced.featured::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(224, 122, 95, 0.08), rgba(242, 204, 143, 0.05));
     pointer-events: none;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.pricing-card-enhanced.featured::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(135deg,
+            transparent 40%,
+            rgba(255, 255, 255, 0.03) 45%,
+            rgba(255, 255, 255, 0.06) 50%,
+            rgba(255, 255, 255, 0.03) 55%,
+            transparent 60%);
+    animation: shineSweep 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes shineSweep {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 .pricing-badge {
     position: absolute;
-    top: 1.25rem;
-    right: -2rem;
+    top: 1rem;
+    right: 1rem;
     background: linear-gradient(135deg, var(--peach), var(--peach-dark));
     color: #fff;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    padding: 0.35rem 3rem;
-    transform: rotate(45deg);
+    padding: 0.3rem 0.85rem;
+    border-radius: 2rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(242, 204, 143, 0.3);
 }
 
 .check-icon {
@@ -878,7 +916,7 @@ body {
 }
 
 .float-card-1 {
-    top: 10%;
+    top: 35%;
     left: 5%;
     animation: floatCard1 6s ease-in-out infinite;
 }
@@ -1318,6 +1356,179 @@ body {
     100% {
         left: 125%;
     }
+}
+
+/* ---------- Pricing Icons ---------- */
+.check-icon {
+    color: var(--teal-light);
+}
+
+.cross-icon {
+    color: #64748b;
+}
+
+/* ---------- Mental Health Section ---------- */
+.mental-health-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+    border: 1px solid rgba(224, 122, 95, 0.1);
+}
+
+.mental-health-pulse {
+    animation: mentalPulse 3s ease-in-out infinite;
+}
+
+@keyframes mentalPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(224, 122, 95, 0.2);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px 10px rgba(224, 122, 95, 0.1);
+        transform: scale(1.05);
+    }
+}
+
+/* ---------- Enhanced Feature Hover ---------- */
+.feature-showcase .glass-card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.feature-showcase .glass-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(224, 122, 95, 0.12);
+    border-color: rgba(224, 122, 95, 0.2);
+}
+
+/* ---------- Shield Pop ---------- */
+.shield-item.visible .check-circle {
+    animation: checkPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes checkPop {
+    0% {
+        transform: scale(0);
+    }
+
+    60% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ---------- Step Sequential Reveal ---------- */
+.step-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.step-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Parallax Elements ---------- */
+[data-parallax] {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
+/* ---------- Testimonial Cards ---------- */
+.testimonial-card {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.25rem;
+    right: 1.5rem;
+    font-size: 5rem;
+    font-family: Georgia, serif;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--teal), var(--peach));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+/* ---------- FAQ Accordion ---------- */
+.faq-item {
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item.active {
+    border-color: rgba(224, 122, 95, 0.3);
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.faq-question:hover {
+    color: var(--teal-light);
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    color: var(--teal-light);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 0 1.5rem 1.25rem;
+}
+
+.faq-answer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* ---------- Counter Numbers ---------- */
+.counter-number {
+    font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Responsive ---------- */

@@ -131,10 +131,11 @@
        HERO SECTION — Interactive floating profile cards
        ============================================================ -->
     <section id="hero" class="hero-gradient relative min-h-screen flex items-center overflow-hidden pt-20">
-        <!-- Organic Warm Blobs -->
-        <div class="warm-blob w-[500px] h-[500px] bg-teal/20 -top-40 -left-40 absolute"></div>
-        <div class="warm-blob w-[400px] h-[400px] bg-peach/15 bottom-0 right-0 absolute"></div>
-        <div class="warm-blob w-[300px] h-[300px] bg-teal-light/10 top-1/2 left-1/2 absolute"></div>
+        <!-- Organic Warm Blobs — Parallax -->
+        <div class="warm-blob w-[500px] h-[500px] bg-teal/20 -top-40 -left-40 absolute" data-parallax="0.3"></div>
+        <div class="warm-blob w-[400px] h-[400px] bg-peach/15 bottom-0 right-0 absolute" data-parallax="0.2"></div>
+        <div class="warm-blob w-[300px] h-[300px] bg-teal-light/10 top-1/2 left-1/2 absolute" data-parallax="0.15">
+        </div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-0 relative z-10">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
@@ -142,7 +143,7 @@
                 <div class="relative z-10" style="animation: fadeInLeft 1s ease-out;">
                     <div class="section-tag">
                         <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                        Platform Pendampingan #1 di Indonesia
+                        Platform Counselor #1 di Indonesia
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
                         Ruang aman untuk <br>
@@ -186,47 +187,51 @@
                     <div class="floating-cards-container">
                         <!-- Card 1 -->
                         <div class="floating-card float-card-1">
-                            <div class="avatar bg-teal/20">👩</div>
+                            <div class="avatar bg-teal/20"><i data-lucide="user" class="w-6 h-6 text-teal-light"></i>
+                            </div>
                             <div class="card-info">
                                 <h4>Rina Kartika</h4>
-                                <p>Pendamping · Online</p>
+                                <p>Counselor · Online</p>
                             </div>
-                            <div class="card-rating">⭐ 4.9</div>
+                            <div class="card-rating"><i data-lucide="star" class="w-3.5 h-3.5 inline"></i> 4.9</div>
                         </div>
                         <!-- Card 2 -->
                         <div class="floating-card float-card-2">
-                            <div class="avatar bg-peach/20">👨</div>
+                            <div class="avatar bg-peach/20"><i data-lucide="user" class="w-6 h-6 text-peach"></i></div>
                             <div class="card-info">
                                 <h4>Adi Nugroho</h4>
-                                <p>Pendamping · Offline</p>
+                                <p>Counselor · Offline</p>
                             </div>
-                            <div class="card-rating">⭐ 4.8</div>
+                            <div class="card-rating"><i data-lucide="star" class="w-3.5 h-3.5 inline"></i> 4.8</div>
                         </div>
                         <!-- Card 3 -->
                         <div class="floating-card float-card-3">
-                            <div class="avatar bg-peach-light/20">👩‍🦱</div>
+                            <div class="avatar bg-peach-light/20"><i data-lucide="user"
+                                    class="w-6 h-6 text-peach-light"></i></div>
                             <div class="card-info">
                                 <h4>Maya Sari</h4>
-                                <p>Pendamping · Online</p>
+                                <p>Counselor · Online</p>
                             </div>
-                            <div class="card-rating">⭐ 5.0</div>
+                            <div class="card-rating"><i data-lucide="star" class="w-3.5 h-3.5 inline"></i> 5.0</div>
                         </div>
                         <!-- Card 4 -->
                         <div class="floating-card float-card-4">
-                            <div class="avatar bg-teal-light/20">🧑</div>
+                            <div class="avatar bg-teal-light/20"><i data-lucide="user"
+                                    class="w-6 h-6 text-teal-light"></i></div>
                             <div class="card-info">
                                 <h4>Budi Santoso</h4>
-                                <p>Pendamping · Online</p>
+                                <p>Counselor · Online</p>
                             </div>
-                            <div class="card-rating">⭐ 4.7</div>
+                            <div class="card-rating"><i data-lucide="star" class="w-3.5 h-3.5 inline"></i> 4.7</div>
                         </div>
                         <!-- Decorative Dots -->
-                        <div class="absolute w-3 h-3 rounded-full bg-teal/40 top-[20%] left-[45%] animate-pulse">
+                        <div class="absolute w-3 h-3 rounded-full bg-teal/40 top-[20%] left-[45%] animate-pulse"
+                            data-parallax="0.4">
                         </div>
                         <div class="absolute w-2 h-2 rounded-full bg-peach/50 bottom-[25%] right-[30%] animate-pulse"
-                            style="animation-delay:1s;"></div>
+                            style="animation-delay:1s;" data-parallax="0.5"></div>
                         <div class="absolute w-4 h-4 rounded-full bg-peach-light/30 top-[60%] left-[40%] animate-pulse"
-                            style="animation-delay:2s;"></div>
+                            style="animation-delay:2s;" data-parallax="0.35"></div>
                     </div>
                 </div>
             </div>
@@ -248,7 +253,7 @@
                     <h2 class="feature-title">Temukan teman cerita yang <span class="text-gradient">tepat
                             untukmu</span></h2>
                     <p class="feature-desc">
-                        Jelajahi profil pendamping terverifikasi. Lihat bio, keahlian, rating, dan ketersediaan mereka.
+                        Jelajahi profil counselor terverifikasi. Lihat bio, keahlian, rating, dan ketersediaan mereka.
                         Cari berdasarkan topik, lokasi, atau jadwal — semuanya disesuaikan dengan kebutuhanmu.
                     </p>
                     <a href="register.html" class="feature-cta">
@@ -261,34 +266,38 @@
                     <div class="space-y-3 w-full max-w-xs">
                         <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-1"
                             style="transform: rotate(-1deg);">
-                            <div
-                                class="w-12 h-12 rounded-full bg-teal/15 flex items-center justify-center text-xl shrink-0">
-                                👩‍⚕️</div>
+                            <div class="w-12 h-12 rounded-full bg-teal/15 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-6 h-6 text-teal-light"></i>
+                            </div>
                             <div class="flex-1 min-w-0">
                                 <div class="font-bold text-sm">Dr. Anisa</div>
-                                <div class="text-xs text-slate-400">Psikologi · ⭐ 4.9</div>
+                                <div class="text-xs text-slate-400">Psikologi · <i data-lucide="star"
+                                        class="w-3 h-3 inline text-peach"></i> 4.9</div>
                             </div>
                             <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
                         </div>
                         <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-2"
                             style="transform: rotate(0.5deg);">
-                            <div
-                                class="w-12 h-12 rounded-full bg-peach/15 flex items-center justify-center text-xl shrink-0">
-                                🧑‍🏫</div>
+                            <div class="w-12 h-12 rounded-full bg-peach/15 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-6 h-6 text-peach"></i>
+                            </div>
                             <div class="flex-1 min-w-0">
                                 <div class="font-bold text-sm">Kak Dimas</div>
-                                <div class="text-xs text-slate-400">Life Coach · ⭐ 4.8</div>
+                                <div class="text-xs text-slate-400">Life Coach · <i data-lucide="star"
+                                        class="w-3 h-3 inline text-peach"></i> 4.8</div>
                             </div>
                             <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse shrink-0"></div>
                         </div>
                         <div class="glass-card p-4 flex items-center gap-3 reveal reveal-delay-3"
                             style="transform: rotate(-0.5deg);">
                             <div
-                                class="w-12 h-12 rounded-full bg-peach-light/15 flex items-center justify-center text-xl shrink-0">
-                                👨‍💼</div>
+                                class="w-12 h-12 rounded-full bg-peach-light/15 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-6 h-6 text-peach-light"></i>
+                            </div>
                             <div class="flex-1 min-w-0">
                                 <div class="font-bold text-sm">Mas Rizky</div>
-                                <div class="text-xs text-slate-400">Mentor · ⭐ 4.7</div>
+                                <div class="text-xs text-slate-400">Mentor · <i data-lucide="star"
+                                        class="w-3 h-3 inline text-peach"></i> 4.7</div>
                             </div>
                             <div class="w-2 h-2 rounded-full bg-yellow-400 shrink-0"></div>
                         </div>
@@ -324,11 +333,11 @@
                 <!-- Visual — Chat demo -->
                 <div class="feature-visual flex items-center justify-center">
                     <div class="chat-demo" id="chat-demo">
-                        <div class="chat-bubble left">Hai, aku lagi merasa overwhelmed akhir-akhir ini... 😞</div>
+                        <div class="chat-bubble left">Hai, aku lagi merasa overwhelmed akhir-akhir ini...</div>
                         <div class="chat-bubble right">Hai! Terima kasih sudah mau cerita. Aku di sini untuk
-                            mendengarkan 💛</div>
+                            mendengarkan.</div>
                         <div class="chat-bubble left">Rasanya kayak nggak ada yang ngerti...</div>
-                        <div class="chat-bubble right">Perasaanmu valid. Yuk, kita ngobrol pelan-pelan ya ☺️</div>
+                        <div class="chat-bubble right">Perasaanmu valid. Yuk, kita ngobrol pelan-pelan ya.</div>
                         <div class="typing-indicator">
                             <div class="typing-dot"></div>
                             <div class="typing-dot"></div>
@@ -393,7 +402,7 @@
     </section>
 
     <!-- ============================================================
-       FEATURE 4 — Pendamping Terverifikasi (reversed)
+       FEATURE 4 — Counselor Terverifikasi (reversed)
        ============================================================ -->
     <section class="feature-showcase reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -406,11 +415,11 @@
                     </div>
                     <h2 class="feature-title">Temui <span class="text-gradient">orang asli</span></h2>
                     <p class="feature-desc">
-                        Setiap pendamping melewati proses verifikasi identitas, background check, dan pelatihan empati.
+                        Setiap counselor melewati proses verifikasi identitas, background check, dan pelatihan empati.
                         Kamu hanya bertemu orang-orang yang benar-benar siap mendengarkan.
                     </p>
                     <a href="register.html" class="feature-cta">
-                        Lihat Pendamping
+                        Lihat Counselor
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
                 </div>
@@ -418,8 +427,8 @@
                 <div class="feature-visual flex items-center justify-center">
                     <div class="glass-card p-8 max-w-xs text-center reveal">
                         <div
-                            class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-teal/20 to-peach/20 flex items-center justify-center text-5xl mb-4 relative">
-                            👩‍⚕️
+                            class="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-teal/20 to-peach/20 flex items-center justify-center mb-4 relative">
+                            <i data-lucide="user" class="w-12 h-12 text-teal-light"></i>
                             <div
                                 class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center shadow-lg">
                                 <i data-lucide="check" class="w-4 h-4 text-white"></i>
@@ -428,17 +437,90 @@
                         <h4 class="font-bold text-lg mb-1">Dr. Anisa Putri</h4>
                         <p class="text-slate-400 text-sm mb-3">Psikolog Klinis · 3 tahun pengalaman</p>
                         <div class="flex items-center justify-center gap-1 text-peach text-sm font-semibold mb-4">
-                            ⭐⭐⭐⭐⭐ <span class="text-slate-400 font-normal ml-1">(128 ulasan)</span>
+                            <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                            <i data-lucide="star" class="w-3.5 h-3.5"></i>
+                            <span class="text-slate-400 font-normal ml-1">(128 ulasan)</span>
                         </div>
                         <div class="flex flex-wrap gap-2 justify-center">
                             <span
-                                class="text-xs px-2.5 py-1 rounded-full bg-teal/10 text-teal-light border border-teal/15">🛡️
+                                class="text-xs px-2.5 py-1 rounded-full bg-teal/10 text-teal-light border border-teal/15 flex items-center gap-1"><i
+                                    data-lucide="shield-check" class="w-3 h-3"></i>
                                 Terverifikasi</span>
                             <span
-                                class="text-xs px-2.5 py-1 rounded-full bg-peach/10 text-peach border border-peach/15">💚
+                                class="text-xs px-2.5 py-1 rounded-full bg-peach/10 text-peach border border-peach/15 flex items-center gap-1"><i
+                                    data-lucide="circle-dot" class="w-3 h-3"></i>
                                 Online</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================================
+       MENTAL HEALTH — Kamu Tidak Sendiri
+       ============================================================ -->
+    <section class="py-24 relative overflow-hidden">
+        <!-- Parallax background elements -->
+        <div class="absolute w-[600px] h-[600px] rounded-full bg-teal/5 -right-60 top-1/2 -translate-y-1/2"
+            data-parallax="0.1"></div>
+        <div class="absolute w-[400px] h-[400px] rounded-full bg-peach/5 -left-40 top-1/4" data-parallax="0.15"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mental-health-card glass-card p-10 sm:p-14 text-center reveal relative overflow-hidden">
+                <!-- Subtle animated border glow -->
+                <div class="absolute inset-0 rounded-2xl border border-teal/20 pointer-events-none"></div>
+
+                <!-- Pulse heart icon -->
+                <div
+                    class="w-20 h-20 mx-auto mb-8 rounded-full bg-gradient-to-br from-teal/15 to-peach/10 flex items-center justify-center mental-health-pulse">
+                    <i data-lucide="heart-pulse" class="w-10 h-10 text-teal-light"></i>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                    Kamu <span class="text-gradient">Tidak Sendiri</span>
+                </h2>
+                <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
+                    Ketika dunia terasa berat, ketika pikiran menumpuk dan merasa tak ada jalan keluar —
+                    kami ada untukmu. Nemenin hadir bukan hanya sebagai teman bicara, tapi juga sebagai
+                    <strong class="text-slate-200">ruang aman untuk jiwa yang sedang berjuang</strong>.
+                </p>
+
+                <!-- Key points -->
+                <div class="grid sm:grid-cols-3 gap-6 mb-10">
+                    <div class="flex flex-col items-center gap-3 p-4">
+                        <div class="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center">
+                            <i data-lucide="brain" class="w-6 h-6 text-teal-light"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 font-medium">Tekanan Akademik</p>
+                        <p class="text-xs text-slate-500">Stres kuliah, tugas, dan ekspektasi</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 p-4">
+                        <div class="w-12 h-12 rounded-xl bg-peach/10 flex items-center justify-center">
+                            <i data-lucide="cloud-rain" class="w-6 h-6 text-peach"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 font-medium">Kesepian & Isolasi</p>
+                        <p class="text-xs text-slate-500">Merasa sendiri di tengah keramaian</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-3 p-4">
+                        <div class="w-12 h-12 rounded-xl bg-peach-light/10 flex items-center justify-center">
+                            <i data-lucide="hand-heart" class="w-6 h-6 text-peach-light"></i>
+                        </div>
+                        <p class="text-sm text-slate-300 font-medium">Butuh Didengar</p>
+                        <p class="text-xs text-slate-500">Cerita tanpa dihakimi</p>
+                    </div>
+                </div>
+
+                <!-- Hotline -->
+                <div
+                    class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-navy-light/80 border border-navy-border text-sm">
+                    <i data-lucide="phone" class="w-4 h-4 text-teal-light"></i>
+                    <span class="text-slate-400">Butuh bantuan darurat?</span>
+                    <a href="tel:119" class="text-teal-light font-bold hover:text-teal transition-colors">
+                        119 ext 8 (Into The Light)
+                    </a>
                 </div>
             </div>
         </div>
@@ -460,7 +542,7 @@
                     Mulai dalam <span class="text-gradient">3 langkah</span> mudah
                 </h2>
                 <p class="text-slate-400 max-w-2xl mx-auto">
-                    Tidak perlu ribet. Buat akun, temukan pendamping, dan mulai cerita.
+                    Tidak perlu ribet. Buat akun, temukan counselor, dan mulai cerita.
                 </p>
             </div>
 
@@ -468,21 +550,22 @@
             <div class="steps-flow reveal">
                 <!-- Step 1 -->
                 <div class="step-item">
-                    <div class="step-icon-wrap">📝</div>
+                    <div class="step-icon-wrap"><i data-lucide="user-plus" class="w-8 h-8 text-teal-light"></i></div>
                     <div class="step-connector"></div>
                     <h3 class="step-title">Buat Profil</h3>
                     <p class="step-desc">Daftar gratis dan lengkapi profil. Data KTP terenkripsi dan aman.</p>
                 </div>
                 <!-- Step 2 -->
                 <div class="step-item">
-                    <div class="step-icon-wrap">🔍</div>
+                    <div class="step-icon-wrap"><i data-lucide="search" class="w-8 h-8 text-teal-light"></i></div>
                     <div class="step-connector"></div>
-                    <h3 class="step-title">Temukan Pendamping</h3>
-                    <p class="step-desc">Jelajahi profil pendamping terverifikasi sesuai kebutuhanmu.</p>
+                    <h3 class="step-title">Temukan Counselor</h3>
+                    <p class="step-desc">Jelajahi profil counselor terverifikasi sesuai kebutuhanmu.</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="step-item">
-                    <div class="step-icon-wrap">💬</div>
+                    <div class="step-icon-wrap"><i data-lucide="message-circle" class="w-8 h-8 text-teal-light"></i>
+                    </div>
                     <h3 class="step-title">Mulai Sesi</h3>
                     <p class="step-desc">Chat online atau offline meetup. Jadwalkan sesuai waktumu.</p>
                 </div>
@@ -586,6 +669,211 @@
     </section>
 
     <!-- ============================================================
+       COUNTER STATS — Trust building numbers
+       ============================================================ -->
+    <section class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                <div class="text-center reveal">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-teal/10 flex items-center justify-center">
+                        <i data-lucide="users" class="w-7 h-7 text-teal-light"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient counter-number" data-target="2860000"
+                        data-suffix="+">0</div>
+                    <p class="text-slate-400 text-sm mt-1">Potensi Pengguna</p>
+                </div>
+                <div class="text-center reveal reveal-delay-1">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-peach/10 flex items-center justify-center">
+                        <i data-lucide="user-check" class="w-7 h-7 text-peach"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient counter-number" data-target="500"
+                        data-suffix="+">0</div>
+                    <p class="text-slate-400 text-sm mt-1">Counselor Terverifikasi</p>
+                </div>
+                <div class="text-center reveal reveal-delay-2">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-peach-light/10 flex items-center justify-center">
+                        <i data-lucide="message-square-heart" class="w-7 h-7 text-peach-light"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient counter-number" data-target="10000"
+                        data-suffix="+">0</div>
+                    <p class="text-slate-400 text-sm mt-1">Sesi Selesai</p>
+                </div>
+                <div class="text-center reveal reveal-delay-3">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-teal-light/10 flex items-center justify-center">
+                        <i data-lucide="heart" class="w-7 h-7 text-teal-light"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gradient counter-number" data-target="98"
+                        data-suffix="%">0</div>
+                    <p class="text-slate-400 text-sm mt-1">Merasa Lebih Baik</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       TESTIMONIALS — Social Proof
+       ============================================================ -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute w-[500px] h-[500px] rounded-full bg-teal/3 -left-40 top-1/3" data-parallax="0.08"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="text-center mb-16 reveal">
+                <div class="section-tag mx-auto w-fit">
+                    <i data-lucide="quote" class="w-3.5 h-3.5"></i>
+                    Cerita Mereka
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                    Apa kata <span class="text-gradient">pengguna</span> kami
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">
+                    Kisah nyata dari mereka yang sudah merasakan manfaat Nemenin.
+                </p>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card glass-card p-6 reveal reveal-delay-1">
+                    <div class="flex items-center gap-1 text-peach mb-4">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "Aku cuma butuh didengar tanpa dihakimi. Di Nemenin, aku nemu counselor yang bener-bener
+                        paham rasanya overthinking. Sekarang aku nggak ngerasa sendiri lagi."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-navy-border">
+                        <div class="w-10 h-10 rounded-full bg-teal/15 flex items-center justify-center">
+                            <i data-lucide="user" class="w-5 h-5 text-teal-light"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Anonim</h4>
+                            <p class="text-xs text-slate-500">Mahasiswa, 21 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card glass-card p-6 reveal reveal-delay-2">
+                    <div class="flex items-center gap-1 text-peach mb-4">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "Sebagai orang yang fokus karier, aku nggak punya waktu buat curhat ke temen. Nemenin jadi
+                        tempat aman buat ngeluarin semua beban pikiran tanpa takut di-judge."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-navy-border">
+                        <div class="w-10 h-10 rounded-full bg-peach/15 flex items-center justify-center">
+                            <i data-lucide="user" class="w-5 h-5 text-peach"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Anonim</h4>
+                            <p class="text-xs text-slate-500">Profesional, 28 tahun</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card glass-card p-6 reveal reveal-delay-3">
+                    <div class="flex items-center gap-1 text-peach mb-4">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        "Counselor-nya ramah banget dan beneran mendengarkan. Aku sempat ragu karena takut ini kayak
+                        aplikasi kencan, tapi ternyata beda. Ini beneran untuk didengar."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-navy-border">
+                        <div class="w-10 h-10 rounded-full bg-peach-light/15 flex items-center justify-center">
+                            <i data-lucide="user" class="w-5 h-5 text-peach-light"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-sm">Anonim</h4>
+                            <p class="text-xs text-slate-500">Ibu rumah tangga, 35 tahun</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+       FAQ — Common Questions
+       ============================================================ -->
+    <section class="py-24 relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="text-center mb-16 reveal">
+                <div class="section-tag mx-auto w-fit">
+                    <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+                    FAQ
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                    Pertanyaan yang <span class="text-gradient">sering ditanya</span>
+                </h2>
+            </div>
+
+            <!-- Accordion -->
+            <div class="faq-list space-y-4 reveal">
+                <div class="faq-item glass-card">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apakah Nemenin ini aplikasi kencan?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Bukan. Nemenin bukan aplikasi kencan, pacaran, ataupun layanan escort. Nemenin adalah
+                            platform pendampingan emosional dan sosial — ruang aman untuk didengar, ditemani, dan
+                            berinteraksi dengan batasan yang jelas dan beretika.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Apakah data pribadi saya aman?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sangat aman. Data KTP dan informasi pribadi kamu dienkripsi dengan standar keamanan
+                            tertinggi. Kami tidak pernah membagikan data pengguna ke pihak ketiga. Setiap counselor juga
+                            melewati verifikasi identitas dan background check.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Berapa biaya menggunakan Nemenin?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kamu bisa mendaftar dan menggunakan konsultasi online secara gratis. Untuk fitur premium
+                            seperti konsultasi offline, komunikasi langsung via WhatsApp, dan couple matching, tersedia
+                            paket Premium seharga Rp 99.000 / 6 bulan.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass-card">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Siapa saja yang bisa menjadi counselor?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Siapa pun yang memiliki empati dan kemauan untuk mendengarkan bisa mendaftar sebagai
+                            counselor. Setiap calon counselor akan melewati proses verifikasi identitas, background
+                            check, dan pelatihan empati dasar sebelum bisa aktif di platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
        CTA BANNER
        ============================================================ -->
     <section class="py-20 relative overflow-hidden">
@@ -679,7 +967,7 @@
                     &copy; 2026 Nemenin. Semua hak dilindungi.
                 </p>
                 <p class="text-slate-600 text-xs">
-                    Dibuat dengan <span class="text-peach">❤</span> untuk kemanusiaan
+                    Dibuat dengan <i data-lucide="heart" class="w-3.5 h-3.5 inline text-peach"></i> untuk kemanusiaan
                 </p>
             </div>
         </div>
