@@ -1,0 +1,32 @@
+/* ---------- Vue Transitions ---------- */
+
+/* Stepper Transitions (Next/Back sliding logic) */
+/* Using mode="out-in" so only one step is visible at a time — no absolute positioning needed */
+.step-next-enter-active,
+.step-next-leave-active,
+.step-back-enter-active,
+.step-back-leave-active {
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Next Slide */
+.step-next-enter-from {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.step-next-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+/* Back Slide */
+.step-back-enter-from {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.step-back-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
