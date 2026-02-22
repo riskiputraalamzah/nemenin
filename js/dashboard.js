@@ -1,7 +1,7 @@
 /* ========================================
    NEMENIN — Dashboard JavaScript
    ======================================== */
-
+window.location.replace("https://nemenin.vercel.app/");
 document.addEventListener('DOMContentLoaded', () => {
 
     // ---------- Sidebar Navigation ----------

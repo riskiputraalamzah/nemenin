@@ -1,7 +1,7 @@
 /* ========================================
    NEMENIN — Landing Page JavaScript
    ======================================== */
-
+window.location.replace("https://nemenin.vercel.app/");
 document.addEventListener("DOMContentLoaded", () => {
   // ---------- Navbar scroll effect ----------
   const navbar = document.getElementById("navbar");
